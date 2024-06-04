@@ -1,4 +1,5 @@
 
+using ExpenSenseAPI.Models.Ingredient;
 using PortionWise.Models.Recipe;
 
 namespace PortionWise.Configs
@@ -11,7 +12,8 @@ namespace PortionWise.Configs
                 .Services
                 .AddAutoMapper(
                     [
-                        typeof(RecipeMapping)
+                        typeof(RecipeMapping),
+                        typeof(IngredientMapping)
                     ]
                 );
         }
