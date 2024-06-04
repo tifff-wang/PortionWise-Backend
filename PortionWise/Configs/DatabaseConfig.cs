@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PortionWise.Database;
 
-namespace PortionWise.Config
+namespace PortionWise.Configs
 {
     class DatabaseConfig
     {
