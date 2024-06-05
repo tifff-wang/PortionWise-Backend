@@ -3,7 +3,7 @@ using PortionWise.Models.Ingredient.DTOs;
 using PortionWise.Models.Ingredient.Entities;
 using Profile = AutoMapper.Profile;
 
-namespace ExpenSenseAPI.Models.Ingredient
+namespace PortionWise.Models.Ingredient
 {
     public class IngredientMapping : Profile
     {

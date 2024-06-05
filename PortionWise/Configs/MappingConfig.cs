@@ -1,5 +1,5 @@
 
-using ExpenSenseAPI.Models.Ingredient;
+using PortionWise.Models.Ingredient;
 using PortionWise.Models.Recipe;
 
 namespace PortionWise.Configs
