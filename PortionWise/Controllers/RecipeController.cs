@@ -19,6 +19,22 @@ namespace PortionWise.Controllers.Recipes
             _recipeService = recipeService;
         }
 
+        [Route("api/RecipeSummaries")]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<RecipeSummaryDTO>>> GetAllRecipeSummaries()
+        {
+            try
+            {
+                return Ok(await _recipeService.GetAllRecipeSummaries());
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ErrorDTO.internalError());
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -48,5 +64,6 @@ namespace PortionWise.Controllers.Recipes
                 return StatusCode(500, ErrorDTO.internalError());
             }
         }
+
     }
 }

@@ -8,6 +8,7 @@ namespace PortionWise.Repository
     public interface IRecipeRepo
     {
         Task<int> CreateRecipe(RecipeBO recipe);
+        Task<List<RecipeBO>> GetAllRecipeSummaries();
     }
 
     public class RecipeRepo : IRecipeRepo
@@ -22,6 +23,12 @@ namespace PortionWise.Repository
         {
             _recipeDAO = recipeDAO;
             _mapper = mapper;
+        }
+
+        public async Task<List<RecipeBO>> GetAllRecipeSummaries()
+        {
+            var recipes = await _recipeDAO.GetAllRecipeSummaries();
+            return _mapper.Map<List<RecipeBO>>(recipes);
         }
 
         public async Task<int> CreateRecipe(RecipeBO recipe)

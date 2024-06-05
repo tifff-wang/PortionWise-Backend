@@ -9,6 +9,8 @@ namespace PortionWise.Models.Recipe
     {
         public RecipeMapping()
         {
+            CreateMap<RecipeSummaryDTO, RecipeBO>().ReverseMap();
+
             CreateMap<RecipeDTO, RecipeBO>().ReverseMap();
             CreateMap<RecipeBO, RecipeEntity>().ReverseMap();
 

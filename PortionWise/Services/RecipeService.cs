@@ -9,6 +9,7 @@ namespace PortionWise.Services
     public interface IRecipeService
     {
         Task CreateRecipe(CreateRecipeDTO recipe);
+        Task<IEnumerable<RecipeSummaryDTO>> GetAllRecipeSummaries();
     }
 
     public class RecipeService : IRecipeService
@@ -25,7 +26,12 @@ namespace PortionWise.Services
             _mapper = mapper;
         }
 
-       
+        public async Task<IEnumerable<RecipeSummaryDTO>> GetAllRecipeSummaries()
+        {
+            var recipes = await _recipeRepo.GetAllRecipeSummaries();
+            return _mapper.Map<List<RecipeSummaryDTO>>(recipes);
+        }
+
         public async Task CreateRecipe(CreateRecipeDTO recipe)
         {
             if (string.IsNullOrWhiteSpace(recipe.Name))
@@ -36,7 +42,7 @@ namespace PortionWise.Services
             {
                 throw new RecipeInvalidPortionSizeException();
             }
-            
+
             var bo = _mapper.Map<RecipeBO>(recipe);
             await _recipeRepo.CreateRecipe(bo);
         }
