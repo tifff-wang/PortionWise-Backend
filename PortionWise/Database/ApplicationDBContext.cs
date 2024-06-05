@@ -35,7 +35,8 @@ namespace PortionWise.Database
                 .HasMany(recipe => recipe.Ingredients)
                 .WithOne(ingredient => ingredient.Recipe)
                 .HasForeignKey(ingredient => ingredient.RecipeId)
-                .IsRequired(false);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 

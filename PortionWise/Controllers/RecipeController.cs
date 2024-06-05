@@ -65,5 +65,29 @@ namespace PortionWise.Controllers.Recipes
             }
         }
 
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> DeleteRecipeForId(Guid id)
+        {
+            try
+            {
+                await _recipeService.DeleteRecipeForId(id);
+                return Ok();
+            }
+            catch (RecipeMissingIdException exception)
+            {
+                return BadRequest(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (RecipeNotFoundException exception)
+            {
+                return NotFound(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ErrorDTO.internalError());
+            }
+        }
     }
 }

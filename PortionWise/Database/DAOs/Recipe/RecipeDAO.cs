@@ -1,4 +1,6 @@
+using System.Data;
 using Microsoft.EntityFrameworkCore;
+using PortionWise.Models.Exceptions;
 using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Database.DAOs.Recipe
@@ -7,6 +9,7 @@ namespace PortionWise.Database.DAOs.Recipe
     {
         Task<int> InsertRecipeWithoutSaving(RecipeEntity recipe);
         Task<List<RecipeEntity>> GetAllRecipeSummaries();
+        Task DeleteRecipeForId(Guid id);
     }
 
     public class RecipeDAO : IRecipeDAO
@@ -37,6 +40,22 @@ namespace PortionWise.Database.DAOs.Recipe
         {
             Recipes.Add(recipe);
             return await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteRecipeForId(Guid id)
+        {
+            var existingRecipe = await Recipes
+                .Include(recipe => recipe.Ingredients)
+                .Where(recipe => recipe.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (existingRecipe == null)
+            {
+                throw new RecipeNotFoundException();
+            }
+
+            Recipes.Remove(existingRecipe);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

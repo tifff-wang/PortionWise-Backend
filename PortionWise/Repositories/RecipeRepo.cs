@@ -9,6 +9,7 @@ namespace PortionWise.Repository
     {
         Task<int> CreateRecipe(RecipeBO recipe);
         Task<List<RecipeBO>> GetAllRecipeSummaries();
+        Task DeleteRecipeForId(Guid id);
     }
 
     public class RecipeRepo : IRecipeRepo
@@ -35,6 +36,11 @@ namespace PortionWise.Repository
         {
             var entity = _mapper.Map<RecipeEntity>(recipe);
             return await _recipeDAO.InsertRecipeWithoutSaving(entity);
+        }
+
+        public async Task DeleteRecipeForId(Guid id)
+        {
+            await _recipeDAO.DeleteRecipeForId(id);
         }
     }
 }
