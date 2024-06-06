@@ -66,7 +66,7 @@ namespace PortionWise.Controllers.Recipes
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> DeleteRecipeForId(Guid id)
@@ -74,7 +74,7 @@ namespace PortionWise.Controllers.Recipes
             try
             {
                 await _recipeService.DeleteRecipeForId(id);
-                return Ok();
+                return NoContent();
             }
             catch (RecipeMissingIdException exception)
             {
@@ -88,6 +88,37 @@ namespace PortionWise.Controllers.Recipes
             {
                 return StatusCode(500, ErrorDTO.internalError());
             }
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateTransaction(
+            Guid id,
+            [FromBody] RecipeDTO recipe
+        )
+        {
+            if (recipe == null || id != recipe.Id)
+            {
+                return BadRequest(new ErrorDTO());
+            }
+
+            try
+            {
+                await _recipeService.UpdateRecipe(recipe);
+                return NoContent();
+            }
+            catch (RecipeNotFoundException exception)
+            {
+                return NotFound(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ErrorDTO.internalError());
+            }
+
         }
     }
 }

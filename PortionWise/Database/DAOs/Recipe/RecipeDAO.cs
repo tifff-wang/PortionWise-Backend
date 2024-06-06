@@ -7,9 +7,11 @@ namespace PortionWise.Database.DAOs.Recipe
 {
     public interface IRecipeDAO
     {
-        Task<int> InsertRecipeWithoutSaving(RecipeEntity recipe);
+        Task<int> InsertRecipe(RecipeEntity recipe);
         Task<List<RecipeEntity>> GetAllRecipeSummaries();
+        Task<RecipeEntity> GetRecipeById(Guid id);
         Task DeleteRecipeForId(Guid id);
+        Task UpdateRecipe(RecipeEntity recipe);
     }
 
     public class RecipeDAO : IRecipeDAO
@@ -36,7 +38,22 @@ namespace PortionWise.Database.DAOs.Recipe
                 .ToListAsync();
         }
 
-        public async Task<int> InsertRecipeWithoutSaving(RecipeEntity recipe)
+        public async Task<RecipeEntity> GetRecipeById(Guid id)
+        {
+            var existingRecipe = await Recipes
+                .Include(recipe => recipe.Ingredients)
+                .Where(recipe => recipe.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (existingRecipe == null)
+            {
+                throw new RecipeNotFoundException();
+            }
+
+            return existingRecipe;
+        }
+
+        public async Task<int> InsertRecipe(RecipeEntity recipe)
         {
             Recipes.Add(recipe);
             return await _dbContext.SaveChangesAsync();
@@ -55,6 +72,12 @@ namespace PortionWise.Database.DAOs.Recipe
             }
 
             Recipes.Remove(existingRecipe);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateRecipe(RecipeEntity recipe)
+        {
+            Recipes.Update(recipe);
             await _dbContext.SaveChangesAsync();
         }
     }

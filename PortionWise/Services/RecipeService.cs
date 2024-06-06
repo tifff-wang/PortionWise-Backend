@@ -11,6 +11,7 @@ namespace PortionWise.Services
         Task CreateRecipe(CreateRecipeDTO recipe);
         Task<IEnumerable<RecipeSummaryDTO>> GetAllRecipeSummaries();
         Task DeleteRecipeForId(Guid id);
+        Task UpdateRecipe(RecipeDTO recipe);
     }
 
     public class RecipeService : IRecipeService
@@ -56,6 +57,12 @@ namespace PortionWise.Services
             }
 
             await _recipeRepo.DeleteRecipeForId(id);
+        }
+
+        public async Task UpdateRecipe(RecipeDTO recipe)
+        {
+            var bo = _mapper.Map<RecipeBO>(recipe);
+            await _recipeRepo.UpdateRecipe(bo);
         }
     }
 }
