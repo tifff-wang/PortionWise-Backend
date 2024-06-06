@@ -10,6 +10,7 @@ namespace PortionWise.Services
     {
         Task CreateRecipe(CreateRecipeDTO recipe);
         Task<IEnumerable<RecipeSummaryDTO>> GetAllRecipeSummaries();
+        Task<RecipeDTO> GetRecipeById(Guid id);
         Task DeleteRecipeForId(Guid id);
         Task UpdateRecipe(RecipeDTO recipe);
     }
@@ -32,6 +33,17 @@ namespace PortionWise.Services
         {
             var recipes = await _recipeRepo.GetAllRecipeSummaries();
             return _mapper.Map<List<RecipeSummaryDTO>>(recipes);
+        }
+
+        public async Task<RecipeDTO> GetRecipeById(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                throw new RecipeMissingIdException();
+            }
+
+            var recipe = await _recipeRepo.GetRecipeById(id);
+            return _mapper.Map<RecipeDTO>(recipe);
         }
 
         public async Task CreateRecipe(CreateRecipeDTO recipe)

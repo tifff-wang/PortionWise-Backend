@@ -9,6 +9,7 @@ namespace PortionWise.Repository
     {
         Task<int> CreateRecipe(RecipeBO recipe);
         Task<List<RecipeBO>> GetAllRecipeSummaries();
+        Task<RecipeBO> GetRecipeById(Guid id);
         Task DeleteRecipeForId(Guid id);
         Task UpdateRecipe(RecipeBO recipe);
     }
@@ -31,6 +32,12 @@ namespace PortionWise.Repository
         {
             var recipes = await _recipeDAO.GetAllRecipeSummaries();
             return _mapper.Map<List<RecipeBO>>(recipes);
+        }
+
+        public async Task<RecipeBO> GetRecipeById(Guid id)
+        {
+            var recipe = await _recipeDAO.GetRecipeById(id);
+            return _mapper.Map<RecipeBO>(recipe);
         }
 
         public async Task<int> CreateRecipe(RecipeBO recipe)
