@@ -1,15 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.JsonPatch.Internal;
 using Microsoft.EntityFrameworkCore;
 using PortionWise.Models.Exceptions;
 using PortionWise.Models.Ingredient.Entities;
+using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Database.DAOs.Ingredient
 {
-    public interface IIngredientDAO { }
+    public interface IIngredientDAO
+    {
+        Task<List<string>> GetPopularIngredientNames(int count);
+        Task<IngredientEntity> GetIngredientById(Guid id);
+        Task<int> InsertIngredient(IngredientEntity ingredient);
+        Task<int> DeleteIngredient(Guid id);
+        Task<int> UpdateIngredient(IngredientEntity ingredient);
+    }
 
     public class IngredientDAO : IIngredientDAO
     {
@@ -21,23 +24,54 @@ namespace PortionWise.Database.DAOs.Ingredient
         }
 
         public DbSet<IngredientEntity> Ingredients => _dbContext.Ingredients;
+        public DbSet<RecipeEntity> Recipes => _dbContext.Recipes;
 
-        public async Task<List<string>> GetPopularIngredientNames()
+        public async Task<List<String>> GetPopularIngredientNames(int count)
         {
             var popularIngredients = await Ingredients
                 .GroupBy(i => i.Name)
-                .Select(group => new { Name = group.Key, Count = group.Count() })
+                .Select(group => new { PopularName = group.Key, Count = group.Count() })
                 .OrderByDescending(result => result.Count)
-                .Take(8)
-                .Select(result => result.Name)
+                .Take(count)
+                .Select(result => result.PopularName)
                 .ToListAsync();
 
             return popularIngredients;
         }
 
+        public async Task<IngredientEntity> GetIngredientById(Guid id)
+        {
+            var existingIngredient = await Ingredients
+                .Where(ingredient => ingredient.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (existingIngredient == null)
+            {
+                throw new IngredientNotFoundException();
+            }
+
+            return existingIngredient;
+        }
+
         public async Task<int> InsertIngredient(IngredientEntity ingredient)
         {
-            Ingredients.Add(ingredient);
+            var recipe = await Recipes.FindAsync(ingredient.RecipeId);
+            if (recipe == null)
+            {
+                throw new RecipeNotFoundException();
+            }
+
+            var newIngredient = new IngredientEntity
+            {
+                Id = Guid.NewGuid(),
+                Name = ingredient.Name,
+                Amount = ingredient.Amount,
+                Unit = ingredient.Unit,
+                RecipeId = ingredient.RecipeId,
+                Recipe = recipe
+            };
+
+            Ingredients.Add(newIngredient);
             return await _dbContext.SaveChangesAsync();
         }
 
