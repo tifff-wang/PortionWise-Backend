@@ -74,7 +74,7 @@ namespace PortionWise.Services
 
         public async Task UpdateIngredient(IngredientDTO ingredient)
         {
-            var bo = _mapper.Map<IngredientBO>(ingredient);
+            var bo = _mapper.Map<UpdateIngredientBO>(ingredient);
             await _ingredientRepo.UpdateIngredient(bo);
         }
     }

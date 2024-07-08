@@ -11,7 +11,7 @@ namespace PortionWise.Repositories
         Task<IngredientBO> GetIngredientById(Guid id);
         Task<int> CreateIngredient(IngredientBO ingredient);
         Task DeleteIngredient(Guid id);
-        Task UpdateIngredient(IngredientBO ingredient);
+        Task UpdateIngredient(UpdateIngredientBO ingredient);
     }
 
     public class IngredientRepo : IIngredientRepo
@@ -49,14 +49,11 @@ namespace PortionWise.Repositories
             await _ingredientDAO.DeleteIngredient(id);
         }
 
-        public async Task UpdateIngredient(IngredientBO ingredient)
+        public async Task UpdateIngredient(UpdateIngredientBO ingredient)
         {
             var existingIngredient = await _ingredientDAO.GetIngredientById(ingredient.Id);
-            var RecipeId = existingIngredient.RecipeId;
             existingIngredient = _mapper.Map(ingredient, existingIngredient);
-            existingIngredient.RecipeId = RecipeId;
 
-            Console.WriteLine($"asd existingIngredient.RecipeId: {existingIngredient.RecipeId}");
             await _ingredientDAO.UpdateIngredient(existingIngredient);
         }
     }

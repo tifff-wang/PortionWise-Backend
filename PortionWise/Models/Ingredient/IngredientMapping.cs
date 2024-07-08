@@ -12,7 +12,6 @@ namespace PortionWise.Models.Ingredient
             CreateMap<IngredientDTO, IngredientBO>().ReverseMap();
             CreateMap<IngredientDTO, UpdateIngredientBO>().ReverseMap();
             CreateMap<UpdateIngredientBO, IngredientEntity>().ReverseMap();
-
             CreateMap<IngredientBO, IngredientEntity>().ReverseMap();
             CreateMap<PopularIngredientsBO, PopularIngredientDTO>().ReverseMap();
 
