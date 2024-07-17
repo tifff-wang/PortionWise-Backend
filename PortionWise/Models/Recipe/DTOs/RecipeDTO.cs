@@ -1,6 +1,5 @@
 using PortionWise.Models.Ingredient.DTOs;
 
-
 namespace PortionWise.Models.Recipe.DTOs
 {
     public class RecipeDTO
@@ -10,6 +9,6 @@ namespace PortionWise.Models.Recipe.DTOs
         public DateTime CreatedAt { get; set; }
         public int portionSize { get; set; }
         public required string Instruction { get; set; }
-        public List<IngredientDTO>? Ingredients { get; set; }
+        public required List<IngredientDTO> Ingredients { get; set; }
     }
 }

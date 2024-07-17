@@ -19,8 +19,10 @@ namespace PortionWise.Configs
             builder.Services.AddTransient<IIngredientService, IngredientService>();
             builder.Services.AddTransient<IIngredientRepo, IngredientRepo>();
             builder.Services.AddTransient<IIngredientDAO, IngredientDAO>();
+
+            builder.Services.AddTransient<INutritionService, NutritionService>();
+            builder.Services.AddTransient<INutritionRepo, NutritionRepo>();
             builder.Services.AddTransient<INutritionApi, NutritionApi>();
-            // builder.Services.AddTransient<INutritionHttpClientFactory, NutritionHttpClientFactory>();
         }
     }
 }

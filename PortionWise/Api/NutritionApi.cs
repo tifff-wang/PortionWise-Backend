@@ -1,33 +1,24 @@
-using System;
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using PortionWise.Models.Nutrition;
+using PortionWise.Models.Nutrition.DLs;
 
 namespace PortionWise.Api
 {
     public interface INutritionApi
     {
-        Task<NutritionDL> GetNutritionInfo(string query);
+        Task<TotalNutritionDL> GetNutritionInfo(string query);
     }
 
     public class NutritionApi : INutritionApi
     {
         private readonly HttpClient _httpClient;
 
-        // private readonly string _apiKey;
-
         public NutritionApi(IHttpClientFactory factory)
         {
             _httpClient = factory.CreateClient("nutrition");
-            // _httpClient = factory.CreateClient();
-            // _apiKey =
-            //     ApiKeyStore.ApiKey
-            //     ?? throw new InvalidOperationException("API key is not initialized.");
         }
 
-        public async Task<NutritionDL> GetNutritionInfo(string query)
+        public async Task<TotalNutritionDL> GetNutritionInfo(string query)
         {
             var url = _httpClient.BaseAddress + $"nutrition?query={query}";
             Console.WriteLine(url);
@@ -45,7 +36,8 @@ namespace PortionWise.Api
                 {
                     throw new InvalidOperationException("Failed to deserialize the response.");
                 }
-                return nutritionData;
+
+                return SumNutritionInfo(nutritionData);
             }
             catch (HttpRequestException ex)
             {
@@ -57,6 +49,32 @@ namespace PortionWise.Api
                 Console.WriteLine($"Deserialization error: {e.Message}");
                 throw;
             }
+        }
+
+        public TotalNutritionDL SumNutritionInfo(NutritionDL nutritionData)
+        {
+            TotalNutritionDL totalNutrition = new TotalNutritionDL
+            {
+                SugarGram = Math.Round(nutritionData.Items.Sum(item => item.SugarGram), 1),
+                FiberGram = Math.Round(nutritionData.Items.Sum(item => item.FiberGram), 1),
+                ServingSize = nutritionData.Items.Sum(item => item.ServingSize),
+                SodiumMg = Math.Round(nutritionData.Items.Sum(item => item.SodiumMg), 1),
+                PotassiumMg = Math.Round(nutritionData.Items.Sum(item => item.PotassiumMg), 1),
+                FatSaturatedGram = Math.Round(
+                    nutritionData.Items.Sum(item => item.FatSaturatedGram),
+                    1
+                ),
+                FatTotalGram = Math.Round(nutritionData.Items.Sum(item => item.FatTotalGram), 1),
+                Calories = Math.Round(nutritionData.Items.Sum(item => item.Calories)),
+                CholesterolMg = Math.Round(nutritionData.Items.Sum(item => item.CholesterolMg), 1),
+                ProteinGram = Math.Round(nutritionData.Items.Sum(item => item.ProteinGram), 1),
+                CarbohydratesTotalGram = Math.Round(
+                    nutritionData.Items.Sum(item => item.CarbohydratesTotalGram),
+                    1
+                )
+            };
+
+            return totalNutrition;
         }
     }
 }

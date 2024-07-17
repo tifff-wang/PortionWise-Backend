@@ -1,29 +1,37 @@
 using Microsoft.AspNetCore.Mvc;
-using PortionWise.Api;
 using PortionWise.Models.Errors;
+using PortionWise.Models.Exceptions;
 using PortionWise.Models.Nutrition;
+using PortionWise.Models.Nutrition.DTOs;
+using PortionWise.Services;
 
 namespace PortionWise.Controllers
 {
-    [ApiController]
+  [ApiController]
     [Route("[controller]")]
     public class NutritionController : ControllerBase
     {
-        private readonly INutritionApi _nutritionApi;
+        private readonly INutritionService _nutritionService;
 
-        public NutritionController(INutritionApi nutritionApi)
+        public NutritionController(INutritionService nutritionService)
         {
-            _nutritionApi = nutritionApi;
+            _nutritionService = nutritionService;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<NutritionDL>> GetNutrition(string query)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<TotalNutritionDTO>> GetNutrition(Guid recipeId)
         {
             try
             {
-                var result = await _nutritionApi.GetNutritionInfo(query);
+                var result = await _nutritionService.GetRecipeNutrition(recipeId);
                 return Ok(result);
+            }
+            catch (RecipeNotFoundException exception)
+            {
+                return BadRequest(new ErrorDTO(exception.ErrorMessage));
             }
             catch (Exception)
             {
