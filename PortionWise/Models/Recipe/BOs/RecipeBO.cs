@@ -1,5 +1,5 @@
 using PortionWise.Models.Ingredient.BOs;
-
+using PortionWise.Models.Nutrition.BOs;
 
 namespace PortionWise.Models.Recipe.BO
 {
@@ -11,5 +11,6 @@ namespace PortionWise.Models.Recipe.BO
         public int portionSize { get; set; }
         public required string Instruction { get; set; }
         public List<IngredientBO>? Ingredients { get; set; }
+        public List<TotalNutritionBO>? NutritionInfo { get; set; }
     }
 }

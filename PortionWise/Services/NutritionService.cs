@@ -44,7 +44,7 @@ namespace PortionWise.Services
             );
             string ingredientString = string.Join(" and ", ingredientStrings);
             Console.WriteLine($"ingredient string: {ingredientString}");
-            var totalNutrition = await _nuritionRepo.GetTotalNutritionInfo(ingredientString);
+            var totalNutrition = await _nuritionRepo.GetTotalNutritionInfo(ingredientString, recipeId);
 
             return _mapper.Map<TotalNutritionDTO>(totalNutrition);
         }

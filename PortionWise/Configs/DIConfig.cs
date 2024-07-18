@@ -1,7 +1,6 @@
 using PortionWise.Api;
 using PortionWise.Database.DAOs.Ingredient;
 using PortionWise.Database.DAOs.Recipe;
-using PortionWise.Models.Ingredient;
 using PortionWise.Repositories;
 using PortionWise.Repository;
 using PortionWise.Services;
@@ -23,6 +22,7 @@ namespace PortionWise.Configs
             builder.Services.AddTransient<INutritionService, NutritionService>();
             builder.Services.AddTransient<INutritionRepo, NutritionRepo>();
             builder.Services.AddTransient<INutritionApi, NutritionApi>();
+            builder.Services.AddTransient<INutritionDAO, NutritionDAO>();
         }
     }
 }
