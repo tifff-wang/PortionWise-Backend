@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PortionWise.Models.Errors;
 using PortionWise.Models.Exceptions;
-using PortionWise.Models.Nutrition;
 using PortionWise.Models.Nutrition.DTOs;
 using PortionWise.Services;
 

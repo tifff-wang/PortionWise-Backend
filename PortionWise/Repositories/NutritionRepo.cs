@@ -1,6 +1,5 @@
 using AutoMapper;
 using PortionWise.Api;
-using PortionWise.Models.Nutrition;
 using PortionWise.Models.Nutrition.BOs;
 
 namespace PortionWise.Repositories

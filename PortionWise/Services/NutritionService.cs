@@ -1,7 +1,6 @@
 using AutoMapper;
 using PortionWise.Models.Exceptions;
 using PortionWise.Models.Ingredient.DTOs;
-using PortionWise.Models.Nutrition;
 using PortionWise.Models.Nutrition.DTOs;
 using PortionWise.Models.Recipe.DTOs;
 using PortionWise.Repositories;

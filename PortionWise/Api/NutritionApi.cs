@@ -1,5 +1,4 @@
 using System.Text.Json;
-using PortionWise.Models.Nutrition;
 using PortionWise.Models.Nutrition.DLs;
 
 namespace PortionWise.Api
