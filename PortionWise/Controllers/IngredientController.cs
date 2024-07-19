@@ -1,39 +1,89 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PortionWise.Models.Errors;
 using PortionWise.Models.Exceptions;
-using PortionWise.Models.Recipe.DTOs;
+using PortionWise.Models.Ingredient.DTOs;
 using PortionWise.Services;
 
-namespace PortionWise.Controllers.Recipes
+namespace PortionWise.Controllers
 {
-    [Route("api/Recipes")]
+    [Route("api/Ingredients")]
     [ApiController]
-    public class RecipeController : ControllerBase
+    public class IngredientController : ControllerBase
     {
+        private readonly IIngredientService _ingredientService;
 
-        private readonly IRecipeService _recipeService;
-        public RecipeController(
-            IRecipeService recipeService
-        )
+        public IngredientController(IIngredientService ingredientService)
         {
-            _recipeService = recipeService;
+            _ingredientService = ingredientService;
         }
 
-        
-        
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<
+            ActionResult<IEnumerable<PopularIngredientDTO>>
+        > GetPopularIngredientNames(int count)
+        {
+            try
+            {
+                var popularIngredients = await _ingredientService.GetPopularIngredientNames(count);
+                return Ok(popularIngredients);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ErrorDTO.internalError());
+            }
+        }
+
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<RecipeDTO>> GetRecipeById(Guid id)
+        public async Task<ActionResult<IngredientDTO>> GetIngredientById(Guid id)
         {
             try
             {
-                var recipe = await _recipeService.GetRecipeById(id);
-                return Ok(recipe);
+                var ingredient = await _ingredientService.GetIngredientById(id);
+                return Ok(ingredient);
             }
-            catch (RecipeMissingIdException exception)
+            catch (IngredientMissingIdException exception)
+            {
+                return BadRequest(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (IngredientNotFoundException exception)
+            {
+                return NotFound(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, ErrorDTO.internalError());
+            }
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> CreateIngredient([FromBody] CreateIngredientDTO ingredient)
+        {
+            if (ingredient == null)
+            {
+                return BadRequest(new ErrorDTO());
+            }
+
+            try
+            {
+                await _ingredientService.CreateIngredient(ingredient);
+                return StatusCode(201);
+            }
+            catch (IngredientMissingNameException exception)
+            {
+                return BadRequest(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (IngredientInvalidAmountException exception)
             {
                 return BadRequest(new ErrorDTO(exception.ErrorMessage));
             }
@@ -47,52 +97,23 @@ namespace PortionWise.Controllers.Recipes
             }
         }
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> CreateRecipe([FromBody] CreateRecipeDTO recipe)
-        {
-            if (recipe == null)
-            {
-                return BadRequest(new ErrorDTO());
-            }
-
-            try
-            {
-                await _recipeService.CreateRecipe(recipe);
-                return StatusCode(201);
-            }
-            catch (RecipeMissingNameException exception)
-            {
-                return BadRequest(new ErrorDTO(exception.ErrorMessage));
-            }
-            catch (RecipeInvalidPortionSizeException exception)
-            {
-                return BadRequest(new ErrorDTO(exception.ErrorMessage));
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, ErrorDTO.internalError());
-            }
-        }
-
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> DeleteRecipeForId(Guid id)
+        public async Task<ActionResult> DeleteIngredient(Guid id)
         {
             try
             {
-                await _recipeService.DeleteRecipeForId(id);
+                await _ingredientService.DeleteIngredient(id);
                 return NoContent();
             }
-            catch (RecipeMissingIdException exception)
+            catch (IngredientMissingIdException exception)
             {
                 return BadRequest(new ErrorDTO(exception.ErrorMessage));
             }
-            catch (RecipeNotFoundException exception)
+            catch (IngredientNotFoundException exception)
             {
                 return NotFound(new ErrorDTO(exception.ErrorMessage));
             }
@@ -107,22 +128,22 @@ namespace PortionWise.Controllers.Recipes
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateTransaction(
+        public async Task<ActionResult> UpdateIngredient(
             Guid id,
-            [FromBody] RecipeDTO recipe
+            [FromBody] IngredientDTO ingredient
         )
         {
-            if (recipe == null || id != recipe.Id)
+            if (ingredient == null || id != ingredient.Id)
             {
                 return BadRequest(new ErrorDTO());
             }
 
             try
             {
-                await _recipeService.UpdateRecipe(recipe);
+                await _ingredientService.UpdateIngredient(ingredient);
                 return NoContent();
             }
-            catch (RecipeNotFoundException exception)
+            catch (IngredientNotFoundException exception)
             {
                 return NotFound(new ErrorDTO(exception.ErrorMessage));
             }
@@ -130,7 +151,6 @@ namespace PortionWise.Controllers.Recipes
             {
                 return StatusCode(500, ErrorDTO.internalError());
             }
-
         }
     }
 }
