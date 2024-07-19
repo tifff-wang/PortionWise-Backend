@@ -5,7 +5,7 @@ using PortionWise.Services;
 
 namespace PortionWise.Controllers
 {
-  [Route("api/RecipeSummaries")]
+    [Route("api/RecipeSummaries")]
     [ApiController]
     public class RecipeSummaryController : ControllerBase
     {
