@@ -21,12 +21,11 @@ namespace PortionWise.Database.DAOs.Recipe
             _dbContext = dbContext;
         }
 
-        public DbSet<NutritionEntity> Nutrition => _dbContext.NutritionInfo;
-        public DbSet<RecipeEntity> Recipes => _dbContext.Recipes;
+        private DbSet<NutritionEntity> _Nutrition => _dbContext.NutritionInfo;
 
         public async Task<NutritionEntity> GetNutritionByRecipeId(Guid recipeId)
         {
-            var existingNutrition = await Nutrition
+            var existingNutrition = await _Nutrition
                 .Where(n => n.RecipeId == recipeId)
                 .FirstOrDefaultAsync();
             if (existingNutrition == null)
@@ -39,40 +38,13 @@ namespace PortionWise.Database.DAOs.Recipe
 
         public async Task<int> InsertNutritionInfo(NutritionEntity nutrition)
         {
-            var recipe = await Recipes.Where(r => r.Id == nutrition.RecipeId).FirstOrDefaultAsync();
-            if (recipe == null)
-            {
-                Console.WriteLine($"error in insertNutrition recipeId = {nutrition.RecipeId})");
-                throw new RecipeNotFoundException();
-            }
-
-            var newNutritionInfo = new NutritionEntity
-            {
-                Id = Guid.NewGuid(),
-                SugarGram = nutrition.SugarGram,
-                FiberGram = nutrition.FiberGram,
-                ServingSize = nutrition.ServingSize,
-                SodiumMg = nutrition.SodiumMg,
-                PotassiumMg = nutrition.PotassiumMg,
-                FatSaturatedGram = nutrition.FatSaturatedGram,
-                FatTotalGram = nutrition.FatTotalGram,
-                Calories = nutrition.Calories,
-                CholesterolMg = nutrition.CholesterolMg,
-                ProteinGram = nutrition.ProteinGram,
-                CacheExpirationTime = DateTime.UtcNow.AddMinutes(5),
-                RecipeId = nutrition.RecipeId,
-                Recipe = recipe
-            };
-
-            Console.WriteLine("data inserted");
-
-            Nutrition.Add(newNutritionInfo);
+            _Nutrition.Add(nutrition);
             return await _dbContext.SaveChangesAsync();
         }
 
         public async Task<int> DeleteNutritionInfoIfExist(Guid recipeId)
         {
-            var nutrition = await Nutrition
+            var nutrition = await _Nutrition
                 .Where(n => n.RecipeId == recipeId)
                 .FirstOrDefaultAsync();
             if (nutrition == null)
@@ -80,7 +52,7 @@ namespace PortionWise.Database.DAOs.Recipe
                 return 0;
             }
 
-            Nutrition.Remove(nutrition);
+            _Nutrition.Remove(nutrition);
             return await _dbContext.SaveChangesAsync();
         }
     }

@@ -31,22 +31,17 @@ namespace PortionWise.Repositories
         {
             try
             {
-                Console.WriteLine(recipeId);
                 var nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
                 if (nutritionFromDB.CacheExpirationTime <= DateTime.UtcNow)
                 {
                     await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
-                    Console.WriteLine("data expired, get info from external api");
                     return await CheckNutritionFromDB(query, recipeId);
                 }
 
-                Console.WriteLine("Get info from db");
                 return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
             }
             catch (NutritionInfoNotFoundException)
             {
-                Console.WriteLine(recipeId);
-                Console.WriteLine("no record, Get info from external api");
                 return await CheckNutritionFromDB(query, recipeId);
             }
         }

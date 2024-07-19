@@ -20,16 +20,13 @@ namespace PortionWise.Api
         public async Task<TotalNutritionDL> GetNutritionInfo(string query)
         {
             var url = _httpClient.BaseAddress + $"nutrition?query={query}";
-            Console.WriteLine(url);
-
+        
             try
             {
                 HttpResponseMessage response = await _httpClient.GetAsync(url);
-                Console.WriteLine(response);
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseBody);
                 var nutritionData = JsonSerializer.Deserialize<NutritionDL>(responseBody);
                 if (nutritionData == null)
                 {

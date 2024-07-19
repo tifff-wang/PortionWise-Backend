@@ -39,11 +39,11 @@ namespace PortionWise.Services
 
             List<IngredientDTO> ingredients = recipe.Ingredients;
 
-            var ingredientStrings = ingredients.Select(
+            IEnumerable<string> ingredientStrings = ingredients.Select(
                 i => $"{Math.Round(i.Amount)}{i.Unit} {i.Name}"
             );
             string ingredientString = string.Join(" and ", ingredientStrings);
-            Console.WriteLine($"ingredient string: {ingredientString}");
+            
             var totalNutrition = await _nuritionRepo.GetTotalNutritionInfo(ingredientString, recipeId);
 
             return _mapper.Map<TotalNutritionDTO>(totalNutrition);

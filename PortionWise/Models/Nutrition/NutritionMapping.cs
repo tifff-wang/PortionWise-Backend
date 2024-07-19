@@ -19,7 +19,8 @@ namespace PortionWise.Models.Nutrition
                 .ForMember(
                     entity => entity.CacheExpirationTime,
                     opt => opt.MapFrom(dl => DateTime.UtcNow.AddMinutes(5))
-                );
+                )
+                .ForMember(entity => entity.Id, opt => opt.MapFrom(dl => Guid.NewGuid()));
         }
     }
 }
