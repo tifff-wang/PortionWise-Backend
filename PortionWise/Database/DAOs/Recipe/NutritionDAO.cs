@@ -9,7 +9,7 @@ namespace PortionWise.Database.DAOs.Recipe
     {
         Task<NutritionEntity> GetNutritionByRecipeId(Guid id);
         Task<int> InsertNutritionInfo(NutritionEntity nutrition);
-        Task<int> DeleteNutritionInfo(Guid id);
+        Task<int> DeleteNutritionInfoIfExist(Guid id);
     }
 
     public class NutritionDAO : INutritionDAO
@@ -70,12 +70,14 @@ namespace PortionWise.Database.DAOs.Recipe
             return await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteNutritionInfo(Guid id)
+        public async Task<int> DeleteNutritionInfoIfExist(Guid recipeId)
         {
-            var nutrition = await Nutrition.Where(n => n.Id == id).FirstOrDefaultAsync();
+            var nutrition = await Nutrition
+                .Where(n => n.RecipeId == recipeId)
+                .FirstOrDefaultAsync();
             if (nutrition == null)
             {
-                throw new NutritionInfoNotFoundException();
+                return 0;
             }
 
             Nutrition.Remove(nutrition);

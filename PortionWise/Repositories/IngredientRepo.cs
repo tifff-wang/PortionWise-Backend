@@ -48,7 +48,8 @@ namespace PortionWise.Repositories
 
         public async Task<int> CreateIngredient(IngredientBO ingredient)
         {
-            await DeleteNutritionFromDbIfExist(ingredient.RecipeId);
+            await _nutritionDAO.DeleteNutritionInfoIfExist(ingredient.RecipeId);
+
             var entity = _mapper.Map<IngredientEntity>(ingredient);
             return await _ingredientDAO.InsertIngredient(entity);
         }
@@ -60,28 +61,17 @@ namespace PortionWise.Repositories
             {
                 throw new IngredientNotFoundException();
             }
-            await DeleteNutritionFromDbIfExist(ingredient.RecipeId);
+            await _nutritionDAO.DeleteNutritionInfoIfExist(ingredient.RecipeId);
             await _ingredientDAO.DeleteIngredient(id);
         }
 
         public async Task UpdateIngredient(UpdateIngredientBO ingredient)
         {
             var existingIngredient = await _ingredientDAO.GetIngredientById(ingredient.Id);
-            await DeleteNutritionFromDbIfExist(existingIngredient.RecipeId);
+            await _nutritionDAO.DeleteNutritionInfoIfExist(existingIngredient.RecipeId);
 
             existingIngredient = _mapper.Map(ingredient, existingIngredient);
             await _ingredientDAO.UpdateIngredient(existingIngredient);
-        }
-
-        public async Task DeleteNutritionFromDbIfExist(Guid recipeId)
-        {
-            var nutrition = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
-            if (nutrition == null)
-            {
-                return;
-            }
-
-            await _nutritionDAO.DeleteNutritionInfo(recipeId);
         }
     }
 }
