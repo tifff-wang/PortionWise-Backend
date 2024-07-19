@@ -23,12 +23,11 @@ namespace PortionWise.Database.DAOs.Ingredient
             _dbContext = dbContext;
         }
 
-        public DbSet<IngredientEntity> Ingredients => _dbContext.Ingredients;
-        public DbSet<RecipeEntity> Recipes => _dbContext.Recipes;
+        private DbSet<IngredientEntity> _ingredients => _dbContext.Ingredients;
 
         public async Task<List<String>> GetPopularIngredientNames(int count)
         {
-            var popularIngredients = await Ingredients
+            var popularIngredients = await _ingredients
                 .GroupBy(i => i.Name)
                 .Select(group => new { PopularName = group.Key, Count = group.Count() })
                 .OrderByDescending(result => result.Count)
@@ -41,7 +40,7 @@ namespace PortionWise.Database.DAOs.Ingredient
 
         public async Task<IngredientEntity> GetIngredientById(Guid id)
         {
-            var existingIngredient = await Ingredients
+            var existingIngredient = await _ingredients
                 .Where(ingredient => ingredient.Id == id)
                 .FirstOrDefaultAsync();
 
@@ -55,29 +54,13 @@ namespace PortionWise.Database.DAOs.Ingredient
 
         public async Task<int> InsertIngredient(IngredientEntity ingredient)
         {
-            var recipe = await Recipes.FindAsync(ingredient.RecipeId);
-            if (recipe == null)
-            {
-                throw new RecipeNotFoundException();
-            }
-
-            var newIngredient = new IngredientEntity
-            {
-                Id = Guid.NewGuid(),
-                Name = ingredient.Name,
-                Amount = ingredient.Amount,
-                Unit = ingredient.Unit,
-                RecipeId = ingredient.RecipeId,
-                Recipe = recipe
-            };
-
-            Ingredients.Add(newIngredient);
+            _ingredients.Add(ingredient);
             return await _dbContext.SaveChangesAsync();
         }
 
         public async Task<int> DeleteIngredient(Guid id)
         {
-            var ingredientToDelete = await Ingredients
+            var ingredientToDelete = await _ingredients
                 .Where(ingredient => ingredient.Id == id)
                 .FirstOrDefaultAsync();
 
@@ -86,13 +69,13 @@ namespace PortionWise.Database.DAOs.Ingredient
                 throw new IngredientNotFoundException();
             }
 
-            Ingredients.Remove(ingredientToDelete);
+            _ingredients.Remove(ingredientToDelete);
             return await _dbContext.SaveChangesAsync();
         }
 
         public async Task<int> UpdateIngredient(IngredientEntity ingredient)
         {
-            Ingredients.Update(ingredient);
+            _ingredients.Update(ingredient);
             return await _dbContext.SaveChangesAsync();
         }
     }
