@@ -28,6 +28,7 @@ namespace PortionWise.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             _configReceipt(modelBuilder);
+            _configNutrition(modelBuilder);
         }
 
         private void _configReceipt(ModelBuilder modelBuilder)
@@ -39,7 +40,10 @@ namespace PortionWise.Database
                 .HasForeignKey(ingredient => ingredient.RecipeId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.ClientCascade);
+        }
 
+        private void _configNutrition(ModelBuilder modelBuilder)
+        {
             modelBuilder
                 .Entity<RecipeEntity>()
                 .HasMany(recipe => recipe.NutritionInfo)

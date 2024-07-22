@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Models.Nutrition.Entity
 {
-    public class NutritionEntity
+  public class NutritionEntity
     {
         [Key]
         public required Guid Id { get; set; }

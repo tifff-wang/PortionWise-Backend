@@ -1,5 +1,6 @@
 
 using PortionWise.Models.Ingredient;
+using PortionWise.Models.Nutrition;
 using PortionWise.Models.Recipe;
 
 namespace PortionWise.Configs
@@ -13,7 +14,8 @@ namespace PortionWise.Configs
                 .AddAutoMapper(
                     [
                         typeof(RecipeMapping),
-                        typeof(IngredientMapping)
+                        typeof(IngredientMapping),
+                        typeof(NutritionMapping)
                     ]
                 );
         }

@@ -11,43 +11,31 @@ namespace PortionWise.Api
     public class NutritionApi : INutritionApi
     {
         private readonly HttpClient _httpClient;
+        public static readonly string NutritionClient = "nutrition";
 
         public NutritionApi(IHttpClientFactory factory)
         {
-            _httpClient = factory.CreateClient("nutrition");
+            _httpClient = factory.CreateClient(NutritionClient);
         }
 
         public async Task<TotalNutritionDL> GetNutritionInfo(string query)
         {
             var url = _httpClient.BaseAddress + $"nutrition?query={query}";
-        
-            try
-            {
-                HttpResponseMessage response = await _httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode();
 
-                string responseBody = await response.Content.ReadAsStringAsync();
-                var nutritionData = JsonSerializer.Deserialize<NutritionDL>(responseBody);
-                if (nutritionData == null)
-                {
-                    throw new InvalidOperationException("Failed to deserialize the response.");
-                }
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
 
-                return SumNutritionInfo(nutritionData);
-            }
-            catch (HttpRequestException ex)
+            string responseBody = await response.Content.ReadAsStringAsync();
+            var nutritionData = JsonSerializer.Deserialize<NutritionDL>(responseBody);
+            if (nutritionData == null)
             {
-                Console.WriteLine($"Request error: {ex.Message}");
-                throw;
+                throw new InvalidOperationException("Failed to deserialize the response.");
             }
-            catch (JsonException e)
-            {
-                Console.WriteLine($"Deserialization error: {e.Message}");
-                throw;
-            }
+
+            return SumNutritionInfo(nutritionData);
         }
 
-        public TotalNutritionDL SumNutritionInfo(NutritionDL nutritionData)
+        private TotalNutritionDL SumNutritionInfo(NutritionDL nutritionData)
         {
             TotalNutritionDL totalNutrition = new TotalNutritionDL
             {

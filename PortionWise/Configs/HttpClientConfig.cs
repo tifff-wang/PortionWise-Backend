@@ -2,12 +2,12 @@ using PortionWise.Api;
 
 namespace PortionWise.Configs
 {
-    public class HttpClientConfig
+  public class HttpClientConfig
     {
         public static void config(WebApplicationBuilder builder)
         {
             builder.Services.AddHttpClient(
-                "nutrition",
+                NutritionApi.NutritionClient,
                 c =>
                 {
                     var apiKey = ApiKeyStore.NutritionApiKey;

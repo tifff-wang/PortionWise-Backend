@@ -6,8 +6,8 @@ using PortionWise.Services;
 
 namespace PortionWise.Controllers
 {
-  [ApiController]
-    [Route("[controller]")]
+    [ApiController]
+    [Route("api/Nutrition")]
     public class NutritionController : ControllerBase
     {
         private readonly INutritionService _nutritionService;

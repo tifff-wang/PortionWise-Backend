@@ -2,7 +2,6 @@ namespace PortionWise.Models.Nutrition.DLs
 {
     public class TotalNutritionDL
     {
-        // public required NutritionItem TotalNutrition { get; set; }
         public double SugarGram { get; set; }
         public double FiberGram { get; set; }
         public double ServingSize { get; set; }

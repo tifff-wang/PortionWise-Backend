@@ -21,11 +21,11 @@ namespace PortionWise.Database.DAOs.Recipe
             _dbContext = dbContext;
         }
 
-        private DbSet<NutritionEntity> _Nutrition => _dbContext.NutritionInfo;
+        private DbSet<NutritionEntity> _nutrition => _dbContext.NutritionInfo;
 
         public async Task<NutritionEntity> GetNutritionByRecipeId(Guid recipeId)
         {
-            var existingNutrition = await _Nutrition
+            var existingNutrition = await _nutrition
                 .Where(n => n.RecipeId == recipeId)
                 .FirstOrDefaultAsync();
             if (existingNutrition == null)
@@ -38,13 +38,13 @@ namespace PortionWise.Database.DAOs.Recipe
 
         public async Task<int> InsertNutritionInfo(NutritionEntity nutrition)
         {
-            _Nutrition.Add(nutrition);
+            _nutrition.Add(nutrition);
             return await _dbContext.SaveChangesAsync();
         }
 
         public async Task<int> DeleteNutritionInfoIfExist(Guid recipeId)
         {
-            var nutrition = await _Nutrition
+            var nutrition = await _nutrition
                 .Where(n => n.RecipeId == recipeId)
                 .FirstOrDefaultAsync();
             if (nutrition == null)
@@ -52,7 +52,7 @@ namespace PortionWise.Database.DAOs.Recipe
                 return 0;
             }
 
-            _Nutrition.Remove(nutrition);
+            _nutrition.Remove(nutrition);
             return await _dbContext.SaveChangesAsync();
         }
     }

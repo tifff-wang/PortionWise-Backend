@@ -37,9 +37,12 @@ namespace PortionWise.Services
                 throw new RecipeNotFoundException();
             }
 
-            List<IngredientDTO> ingredients = recipe.Ingredients;
+            if(recipe.Ingredients == null) 
+            {
+              throw new IngredientNotFoundException();
+            }
 
-            IEnumerable<string> ingredientStrings = ingredients.Select(
+            IEnumerable<string> ingredientStrings = recipe.Ingredients.Select(
                 i => $"{Math.Round(i.Amount)}{i.Unit} {i.Name}"
             );
             string ingredientString = string.Join(" and ", ingredientStrings);

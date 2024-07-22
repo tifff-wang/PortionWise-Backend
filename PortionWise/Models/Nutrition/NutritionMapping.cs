@@ -13,7 +13,7 @@ namespace PortionWise.Models.Nutrition
         {
             CreateMap<TotalNutritionDTO, TotalNutritionBO>().ReverseMap();
             CreateMap<TotalNutritionBO, TotalNutritionDL>().ReverseMap();
-            CreateMap<NutritionEntity, TotalNutritionBO>();
+            CreateMap<NutritionEntity, TotalNutritionBO>().ReverseMap();
 
             CreateMap<TotalNutritionDL, NutritionEntity>()
                 .ForMember(

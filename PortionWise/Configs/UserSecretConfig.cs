@@ -2,9 +2,10 @@ namespace PortionWise.Configs
 {
     public class UserSecretConfig
     {
-        public static void config(IConfiguration configuration)
+        public static void config(WebApplicationBuilder builder)
         {
-            var apiKey = configuration["Api_Key"];
+            builder.Configuration.AddUserSecrets<Program>();
+            var apiKey = builder.Configuration["Api_Key"];
             ApiKeyStore.NutritionApiKey = apiKey;
         }
     }

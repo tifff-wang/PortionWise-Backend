@@ -2,8 +2,6 @@ using PortionWise.Configs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddUserSecrets<Program>();
-
 // Configure services
 ControllerConfig.config(builder);
 MappingConfig.config(builder);
@@ -11,7 +9,7 @@ DatabaseConfig.config(builder);
 DIConfig.config(builder);
 SwaggerConfig.config(builder);
 HttpClientConfig.config(builder);
-UserSecretConfig.config(builder.Configuration);
+UserSecretConfig.config(builder);
 
 var app = builder.Build();
 

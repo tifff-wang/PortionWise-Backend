@@ -32,7 +32,7 @@ namespace PortionWise.Repositories
             try
             {
                 var nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
-                if (nutritionFromDB.CacheExpirationTime <= DateTime.UtcNow)
+                if (nutritionFromDB.IsValid())
                 {
                     await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
                     return await CheckNutritionFromDB(query, recipeId);
@@ -53,6 +53,14 @@ namespace PortionWise.Repositories
             nutritionAddtoDB.RecipeId = recipeId;
             await _nutritionDAO.InsertNutritionInfo(nutritionAddtoDB);
             return _mapper.Map<TotalNutritionBO>(nutritionFromExternalApi);
+        }
+    }
+
+    static class NutritionEntityExtensions
+    {
+        public static bool IsValid(this NutritionEntity value)
+        {
+            return value.CacheExpirationTime <= DateTime.UtcNow;
         }
     }
 }
