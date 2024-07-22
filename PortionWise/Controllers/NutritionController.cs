@@ -20,6 +20,7 @@ namespace PortionWise.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<TotalNutritionDTO>> GetNutrition(Guid recipeId)
         {
@@ -31,6 +32,10 @@ namespace PortionWise.Controllers
             catch (RecipeNotFoundException exception)
             {
                 return BadRequest(new ErrorDTO(exception.ErrorMessage));
+            }
+            catch (IngredientNotFoundException exception)
+            {
+                return NotFound(new ErrorDTO(exception.ErrorMessage));
             }
             catch (Exception)
             {

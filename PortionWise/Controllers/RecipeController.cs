@@ -109,7 +109,7 @@ namespace PortionWise.Controllers.Recipes
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateRecipeForId(
             Guid id,
-            [FromBody] RecipeDTO recipe
+            [FromBody] UpdateRecipeDTO recipe
         )
         {
             if (recipe == null || id != recipe.Id)

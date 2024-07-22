@@ -35,18 +35,18 @@ namespace PortionWise.Repositories
                 if (nutritionFromDB.IsValid())
                 {
                     await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
-                    return await CheckNutritionFromDB(query, recipeId);
+                    return await CacheNutritionInfoToDB(query, recipeId);
                 }
 
                 return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
             }
             catch (NutritionInfoNotFoundException)
             {
-                return await CheckNutritionFromDB(query, recipeId);
+                return await CacheNutritionInfoToDB(query, recipeId);
             }
         }
 
-        public async Task<TotalNutritionBO> CheckNutritionFromDB(string query, Guid recipeId)
+        public async Task<TotalNutritionBO> CacheNutritionInfoToDB(string query, Guid recipeId)
         {
             var nutritionFromExternalApi = await _nutritionApi.GetNutritionInfo(query);
             var nutritionAddtoDB = _mapper.Map<NutritionEntity>(nutritionFromExternalApi);
