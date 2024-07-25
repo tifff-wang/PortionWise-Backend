@@ -8,11 +8,13 @@ MappingConfig.config(builder);
 DatabaseConfig.config(builder);
 DIConfig.config(builder);
 SwaggerConfig.config(builder);
+HttpClientConfig.config(builder);
+UserSecretConfig.config(builder);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) 
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

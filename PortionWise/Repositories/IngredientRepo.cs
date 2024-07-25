@@ -1,5 +1,7 @@
 using AutoMapper;
 using PortionWise.Database.DAOs.Ingredient;
+using PortionWise.Database.DAOs.Recipe;
+using PortionWise.Models.Exceptions;
 using PortionWise.Models.Ingredient.BOs;
 using PortionWise.Models.Ingredient.Entities;
 
@@ -17,12 +19,18 @@ namespace PortionWise.Repositories
     public class IngredientRepo : IIngredientRepo
     {
         private readonly IIngredientDAO _ingredientDAO;
+        private readonly INutritionDAO _nutritionDAO;
 
         private IMapper _mapper;
 
-        public IngredientRepo(IIngredientDAO ingredientDAO, IMapper mapper)
+        public IngredientRepo(
+            IIngredientDAO ingredientDAO,
+            INutritionDAO nutritionDAO,
+            IMapper mapper
+        )
         {
             _ingredientDAO = ingredientDAO;
+            _nutritionDAO = nutritionDAO;
             _mapper = mapper;
         }
 
@@ -40,20 +48,29 @@ namespace PortionWise.Repositories
 
         public async Task<int> CreateIngredient(IngredientBO ingredient)
         {
+            await _nutritionDAO.DeleteNutritionInfoIfExist(ingredient.RecipeId);
+
             var entity = _mapper.Map<IngredientEntity>(ingredient);
             return await _ingredientDAO.InsertIngredient(entity);
         }
 
         public async Task DeleteIngredient(Guid id)
         {
+            var ingredient = await _ingredientDAO.GetIngredientById(id);
+            if (ingredient == null)
+            {
+                throw new IngredientNotFoundException();
+            }
+            await _nutritionDAO.DeleteNutritionInfoIfExist(ingredient.RecipeId);
             await _ingredientDAO.DeleteIngredient(id);
         }
 
         public async Task UpdateIngredient(UpdateIngredientBO ingredient)
         {
             var existingIngredient = await _ingredientDAO.GetIngredientById(ingredient.Id);
-            existingIngredient = _mapper.Map(ingredient, existingIngredient);
+            await _nutritionDAO.DeleteNutritionInfoIfExist(existingIngredient.RecipeId);
 
+            existingIngredient = _mapper.Map(ingredient, existingIngredient);
             await _ingredientDAO.UpdateIngredient(existingIngredient);
         }
     }

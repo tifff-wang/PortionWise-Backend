@@ -1,6 +1,7 @@
 using AutoMapper;
 using PortionWise.Database.DAOs.Recipe;
 using PortionWise.Models.Recipe.BO;
+using PortionWise.Models.Recipe.BOs;
 using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Repository
@@ -11,7 +12,7 @@ namespace PortionWise.Repository
         Task<List<RecipeBO>> GetAllRecipeSummaries();
         Task<RecipeBO> GetRecipeById(Guid id);
         Task DeleteRecipeForId(Guid id);
-        Task UpdateRecipe(RecipeBO recipe);
+        Task UpdateRecipe(UpdateRecipeBO recipe);
     }
 
     public class RecipeRepo : IRecipeRepo
@@ -19,10 +20,7 @@ namespace PortionWise.Repository
         private readonly IRecipeDAO _recipeDAO;
         private IMapper _mapper;
 
-        public RecipeRepo(
-            IRecipeDAO recipeDAO,
-            IMapper mapper
-        )
+        public RecipeRepo(IRecipeDAO recipeDAO, IMapper mapper)
         {
             _recipeDAO = recipeDAO;
             _mapper = mapper;
@@ -51,11 +49,10 @@ namespace PortionWise.Repository
             await _recipeDAO.DeleteRecipeForId(id);
         }
 
-        public async Task UpdateRecipe(RecipeBO recipe)
+        public async Task UpdateRecipe(UpdateRecipeBO recipe)
         {
             var existingRecipe = await _recipeDAO.GetRecipeById(recipe.Id);
             existingRecipe = _mapper.Map(recipe, existingRecipe);
-
             await _recipeDAO.UpdateRecipe(existingRecipe);
         }
     }

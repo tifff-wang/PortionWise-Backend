@@ -28,13 +28,16 @@ namespace PortionWise.Database.DAOs.Recipe
         public async Task<List<RecipeEntity>> GetAllRecipeSummaries()
         {
             return await Recipes
-                .Select(x => new RecipeEntity
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    CreatedAt = x.CreatedAt,
-                    Instruction = "",
-                })
+                .Select(
+                    x =>
+                        new RecipeEntity
+                        {
+                            Id = x.Id,
+                            Name = x.Name,
+                            CreatedAt = x.CreatedAt,
+                            Instruction = "",
+                        }
+                )
                 .ToListAsync();
         }
 
@@ -42,6 +45,7 @@ namespace PortionWise.Database.DAOs.Recipe
         {
             var existingRecipe = await Recipes
                 .Include(recipe => recipe.Ingredients)
+                .Include(recipe => recipe.NutritionInfo)
                 .Where(recipe => recipe.Id == id)
                 .FirstOrDefaultAsync();
 

@@ -1,14 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using PortionWise.Models.Ingredient.Entities;
+using PortionWise.Models.Nutrition.Entity;
 using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Database
 {
     public class ApplicationDBContext : DbContext
     {
-
         public DbSet<IngredientEntity> Ingredients { get; set; }
         public DbSet<RecipeEntity> Recipes { get; set; }
+
+        public DbSet<NutritionEntity> NutritionInfo { get; set; }
 
         protected readonly IConfiguration Configuration;
 
@@ -26,6 +28,7 @@ namespace PortionWise.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             _configReceipt(modelBuilder);
+            _configNutrition(modelBuilder);
         }
 
         private void _configReceipt(ModelBuilder modelBuilder)
@@ -38,6 +41,16 @@ namespace PortionWise.Database
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.ClientCascade);
         }
-    }
 
+        private void _configNutrition(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<RecipeEntity>()
+                .HasMany(recipe => recipe.NutritionInfo)
+                .WithOne(nutritionInfo => nutritionInfo.Recipe)
+                .HasForeignKey(nutritionInfo => nutritionInfo.RecipeId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.ClientCascade);
+        }
+    }
 }

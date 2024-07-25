@@ -1,5 +1,5 @@
 using PortionWise.Models.Ingredient.DTOs;
-
+using PortionWise.Models.Nutrition.DTOs;
 
 namespace PortionWise.Models.Recipe.DTOs
 {
@@ -11,5 +11,6 @@ namespace PortionWise.Models.Recipe.DTOs
         public int portionSize { get; set; }
         public required string Instruction { get; set; }
         public List<IngredientDTO>? Ingredients { get; set; }
+        public List<TotalNutritionDTO>? NutritionInfo { get; set; }
     }
 }
