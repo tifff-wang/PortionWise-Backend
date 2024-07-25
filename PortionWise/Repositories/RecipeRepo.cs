@@ -18,13 +18,11 @@ namespace PortionWise.Repository
     public class RecipeRepo : IRecipeRepo
     {
         private readonly IRecipeDAO _recipeDAO;
-        private readonly INutritionDAO _nutritionDAO;
         private IMapper _mapper;
 
-        public RecipeRepo(IRecipeDAO recipeDAO, INutritionDAO nutritionDAO, IMapper mapper)
+        public RecipeRepo(IRecipeDAO recipeDAO, IMapper mapper)
         {
             _recipeDAO = recipeDAO;
-            _nutritionDAO = nutritionDAO;
             _mapper = mapper;
         }
 
@@ -55,7 +53,6 @@ namespace PortionWise.Repository
         {
             var existingRecipe = await _recipeDAO.GetRecipeById(recipe.Id);
             existingRecipe = _mapper.Map(recipe, existingRecipe);
-            await _nutritionDAO.DeleteNutritionInfoIfExist(recipe.Id);
             await _recipeDAO.UpdateRecipe(existingRecipe);
         }
     }

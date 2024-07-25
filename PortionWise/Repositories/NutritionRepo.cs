@@ -1,4 +1,3 @@
-using System.Linq.Expressions;
 using AutoMapper;
 using PortionWise.Api;
 using PortionWise.Database.DAOs.Recipe;
@@ -29,38 +28,102 @@ namespace PortionWise.Repositories
 
         public async Task<TotalNutritionBO> GetTotalNutritionInfo(string query, Guid recipeId)
         {
+            NutritionEntity? nutritionFromDB = null;
             try
             {
-                var nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
-                if (nutritionFromDB.IsValid())
-                {
-                    await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
-                    return await CacheNutritionInfoToDB(query, recipeId);
-                }
-
-                return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
+                nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
             }
             catch (NutritionInfoNotFoundException)
             {
-                return await CacheNutritionInfoToDB(query, recipeId);
+                // ignore
             }
+
+            bool isValid = !nutritionFromDB?.IsExpired() ?? false;
+            Console.WriteLine($"nutritionFromDB: {nutritionFromDB}");
+            Console.WriteLine($"!nutritionFromDB?.IsExpired(): {!nutritionFromDB?.IsExpired()}");
+            Console.WriteLine($"isValid: {isValid}");
+            if (!isValid)
+            {
+                if (nutritionFromDB?.IsExpired() == true)
+                {
+                    await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
+                }
+
+                var totalNutrition = await LoadTotalNutritionFromApi(query);
+                await CacheNutritionInfoToDB(totalNutrition, recipeId);
+                return _mapper.Map<TotalNutritionBO>(totalNutrition);
+            }
+
+            return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
+
+            // try
+            // {
+            //     var nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
+            //     if (nutritionFromDB.IsValid())
+            //     {
+            //         await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
+            //         var totalNutrition = await LoadTotalNutritionFromApi(query);
+            //         await CacheNutritionInfoToDB(totalNutrition, recipeId);
+            //         return _mapper.Map<TotalNutritionBO>(totalNutrition);
+            //     }
+
+            //     return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
+            // }
+            // catch (NutritionInfoNotFoundException)
+            // {
+            //     var totalNutrition = await LoadTotalNutritionFromApi(query);
+            //     await CacheNutritionInfoToDB(totalNutrition, recipeId);
+            //     return _mapper.Map<TotalNutritionBO>(totalNutrition);
+            // }
         }
 
-        public async Task<TotalNutritionBO> CacheNutritionInfoToDB(string query, Guid recipeId)
+        public async Task<TotalNutritionDL> LoadTotalNutritionFromApi(string query)
         {
             var nutritionFromExternalApi = await _nutritionApi.GetNutritionInfo(query);
-            var nutritionAddtoDB = _mapper.Map<NutritionEntity>(nutritionFromExternalApi);
+            return nutritionFromExternalApi.SumNutritionInfo();
+        }
+
+        public async Task CacheNutritionInfoToDB(TotalNutritionDL totalNutriton, Guid recipeId)
+        {
+            var nutritionAddtoDB = _mapper.Map<NutritionEntity>(totalNutriton);
             nutritionAddtoDB.RecipeId = recipeId;
             await _nutritionDAO.InsertNutritionInfo(nutritionAddtoDB);
-            return _mapper.Map<TotalNutritionBO>(nutritionFromExternalApi);
         }
     }
 
     static class NutritionEntityExtensions
     {
-        public static bool IsValid(this NutritionEntity value)
+        public static bool IsExpired(this NutritionEntity value)
         {
             return value.CacheExpirationTime <= DateTime.UtcNow;
+        }
+    }
+
+    static class NutritionDLExtensions
+    {
+        public static TotalNutritionDL SumNutritionInfo(this NutritionDL nutritionData)
+        {
+            TotalNutritionDL totalNutrition = new TotalNutritionDL
+            {
+                SugarGram = Math.Round(nutritionData.Items.Sum(item => item.SugarGram), 1),
+                FiberGram = Math.Round(nutritionData.Items.Sum(item => item.FiberGram), 1),
+                ServingSize = nutritionData.Items.Sum(item => item.ServingSize),
+                SodiumMg = Math.Round(nutritionData.Items.Sum(item => item.SodiumMg), 1),
+                PotassiumMg = Math.Round(nutritionData.Items.Sum(item => item.PotassiumMg), 1),
+                FatSaturatedGram = Math.Round(
+                    nutritionData.Items.Sum(item => item.FatSaturatedGram),
+                    1
+                ),
+                FatTotalGram = Math.Round(nutritionData.Items.Sum(item => item.FatTotalGram), 1),
+                Calories = Math.Round(nutritionData.Items.Sum(item => item.Calories)),
+                CholesterolMg = Math.Round(nutritionData.Items.Sum(item => item.CholesterolMg), 1),
+                ProteinGram = Math.Round(nutritionData.Items.Sum(item => item.ProteinGram), 1),
+                CarbohydratesTotalGram = Math.Round(
+                    nutritionData.Items.Sum(item => item.CarbohydratesTotalGram),
+                    1
+                )
+            };
+            return totalNutrition;
         }
     }
 }
