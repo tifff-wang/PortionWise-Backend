@@ -46,7 +46,7 @@ namespace PortionWise.Repositories
             {
                 if (nutritionFromDB?.IsExpired() == true)
                 {
-                    await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
+                    await _nutritionDAO.DeleteNutritionInfoIfExist(recipeId);
                 }
 
                 var totalNutrition = await LoadTotalNutritionFromApi(query);
@@ -55,26 +55,6 @@ namespace PortionWise.Repositories
             }
 
             return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
-
-            // try
-            // {
-            //     var nutritionFromDB = await _nutritionDAO.GetNutritionByRecipeId(recipeId);
-            //     if (nutritionFromDB.IsValid())
-            //     {
-            //         await _nutritionDAO.DeleteNutritionInfoIfExist(nutritionFromDB.Id);
-            //         var totalNutrition = await LoadTotalNutritionFromApi(query);
-            //         await CacheNutritionInfoToDB(totalNutrition, recipeId);
-            //         return _mapper.Map<TotalNutritionBO>(totalNutrition);
-            //     }
-
-            //     return _mapper.Map<TotalNutritionBO>(nutritionFromDB);
-            // }
-            // catch (NutritionInfoNotFoundException)
-            // {
-            //     var totalNutrition = await LoadTotalNutritionFromApi(query);
-            //     await CacheNutritionInfoToDB(totalNutrition, recipeId);
-            //     return _mapper.Map<TotalNutritionBO>(totalNutrition);
-            // }
         }
 
         public async Task<TotalNutritionDL> LoadTotalNutritionFromApi(string query)

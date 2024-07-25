@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using PortionWise.Models.Exceptions;
 using PortionWise.Models.Nutrition.Entity;
-using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Database.DAOs.Recipe
 {
-    public interface INutritionDAO
+  public interface INutritionDAO
     {
         Task<NutritionEntity> GetNutritionByRecipeId(Guid id);
         Task<int> InsertNutritionInfo(NutritionEntity nutrition);
@@ -47,6 +46,7 @@ namespace PortionWise.Database.DAOs.Recipe
             var nutrition = await _nutrition
                 .Where(n => n.RecipeId == recipeId)
                 .FirstOrDefaultAsync();
+
             if (nutrition == null)
             {
                 return 0;
