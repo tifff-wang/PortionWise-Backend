@@ -13,6 +13,6 @@ namespace PortionWise.Models.Ingredient.Entities
         public required string Unit { get; set; }
 
         public required Guid RecipeId { get; set; }
-        public required RecipeEntity Recipe { get; set; }
+        public RecipeEntity? Recipe { get; set; }
     }
 }

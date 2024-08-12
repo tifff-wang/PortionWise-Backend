@@ -3,7 +3,7 @@ using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.Models.Nutrition.Entity
 {
-  public class NutritionEntity
+    public class NutritionEntity
     {
         [Key]
         public required Guid Id { get; set; }
@@ -21,6 +21,6 @@ namespace PortionWise.Models.Nutrition.Entity
         public DateTime? CacheExpirationTime { get; set; }
 
         public required Guid RecipeId { get; set; }
-        public required RecipeEntity Recipe { get; set; }
+        public required RecipeEntity? Recipe { get; set; }
     }
 }
