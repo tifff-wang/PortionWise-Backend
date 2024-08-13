@@ -4,7 +4,7 @@ namespace PortionWise.Models.Recipe.DTOs
     {
         public required Guid Id { get; set; }
         public required string Name { get; set; }
-        public int portionSize { get; set; }
+        public int PortionSize { get; set; }
         public required string Instruction { get; set; }
     }
 }

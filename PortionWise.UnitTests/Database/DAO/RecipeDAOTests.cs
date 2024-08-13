@@ -4,15 +4,16 @@ using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.UnitTests.Database.DAO
 {
-  public class RecipeDAOTests
+    public class RecipeDAOTests
     {
-        private MockDBContext _mockContext;
-        private RecipeDAO _recipeDAO;
-        private List<RecipeEntity> _mockRecipeEntityData = MockRecipeData.CreateMockRecipeEntity();
+        private readonly MockDBContext _mockContext;
+        private readonly RecipeDAO _recipeDAO;
+        private readonly List<RecipeEntity> _mockRecipeEntityData =
+            MockRecipeEntity.CreateMockRecipeEntity();
 
         public RecipeDAOTests()
         {
-            _mockContext = new MockDBContext("recipe");
+            _mockContext = new MockDBContext("recipeDAOTests");
             _recipeDAO = new RecipeDAO(_mockContext.Context);
             _mockContext.ClearTestingData();
         }
@@ -63,6 +64,8 @@ namespace PortionWise.UnitTests.Database.DAO
             var affectedRow = await _recipeDAO.InsertRecipe(recipe);
 
             Assert.Equal(3, affectedRow);
+            var existingRecipe = await _mockContext.Context.Recipes.FindAsync(recipe.Id);
+            Assert.NotNull(existingRecipe);
         }
 
         [Fact]

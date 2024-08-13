@@ -1,9 +1,7 @@
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using PortionWise.Models.Ingredient.Entities;
-using PortionWise.Models.Nutrition.Entity;
 using PortionWise.Models.Recipe.Entities;
 
-public static class MockRecipeData
+public static class MockRecipeEntity
 {
     private static Guid _id1 = Guid.NewGuid();
     private static Guid _id2 = Guid.NewGuid();
@@ -17,7 +15,7 @@ public static class MockRecipeData
                 Id = _id1,
                 Name = "Banana Bread",
                 CreatedAt = DateTime.UtcNow,
-                portionSize = 12,
+                PortionSize = 12,
                 Instruction = "Bake the banana cake",
                 Ingredients = new List<IngredientEntity>
                 {
@@ -44,7 +42,7 @@ public static class MockRecipeData
                 Id = _id2,
                 Name = "Chocolate Cake",
                 CreatedAt = DateTime.UtcNow,
-                portionSize = 8,
+                PortionSize = 8,
                 Instruction = "Bake chocolate cake",
                 Ingredients = new List<IngredientEntity>
                 {
@@ -66,6 +64,29 @@ public static class MockRecipeData
                     }
                 }
             },
+        };
+    }
+
+    public static List<RecipeEntity> CreateMockSummariesEntity()
+    {
+        return new List<RecipeEntity>
+        {
+            new RecipeEntity
+            {
+                Id = _id1,
+                Name = "Banana Bread",
+                CreatedAt = DateTime.UtcNow,
+                PortionSize = 12,
+                Instruction = "",
+            },
+            new RecipeEntity
+            {
+                Id = _id2,
+                Name = "Chocolate Cake",
+                CreatedAt = DateTime.UtcNow,
+                PortionSize = 8,
+                Instruction = "",
+            }
         };
     }
 }

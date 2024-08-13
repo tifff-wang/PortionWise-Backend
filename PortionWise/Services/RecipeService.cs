@@ -50,7 +50,7 @@ namespace PortionWise.Services
             {
                 throw new RecipeMissingNameException();
             }
-            else if (recipe.portionSize <= 0)
+            else if (recipe.PortionSize <= 0)
             {
                 throw new RecipeInvalidPortionSizeException();
             }
