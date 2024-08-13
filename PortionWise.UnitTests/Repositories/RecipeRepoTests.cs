@@ -7,7 +7,6 @@ using PortionWise.Models.Recipe.BO;
 using PortionWise.Models.Recipe.BOs;
 using PortionWise.Models.Recipe.Entities;
 using PortionWise.Repository;
-using PortionWise.UnitTests.MockData.Recipes;
 
 namespace PortionWise.UnitTests.Repositories
 {
@@ -17,9 +16,7 @@ namespace PortionWise.UnitTests.Repositories
         private readonly Mock<IRecipeDAO> _mockRecipeDAO;
         private readonly List<RecipeEntity> _mockRecipeEntityData =
             MockRecipeEntity.CreateMockRecipeEntity();
-        private readonly List<RecipeEntity> _mockSummariesData =
-            MockRecipeEntity.CreateMockSummariesEntity();
-
+       
         public RecipeRepoTests()
         {
             var recipeProfile = new RecipeMapping();
@@ -38,9 +35,12 @@ namespace PortionWise.UnitTests.Repositories
         [Fact]
         public async void GetAllRecipeSummaries_ReturnCorrectSummaries()
         {
+           var mockSummariesData =
+            MockRecipeEntity.CreateMockSummariesEntity();
+
             _mockRecipeDAO
                 .Setup(DAO => DAO.GetAllRecipeSummaries())
-                .Returns(Task.FromResult(_mockSummariesData));
+                .Returns(Task.FromResult(mockSummariesData));
 
             var recipeSummaries = await _recipeRepo.GetAllRecipeSummaries();
 
@@ -80,7 +80,7 @@ namespace PortionWise.UnitTests.Repositories
         [Fact]
         public async void DeleteRecipeForId_DAODeleteRecipeShouldBeCalled()
         {
-            var id = new Guid();
+            var id = Guid.NewGuid();
             _mockRecipeDAO.Setup(DAO => DAO.DeleteRecipeForId(id)).Returns(Task.CompletedTask);
 
             await _recipeRepo.DeleteRecipeForId(id);
@@ -95,7 +95,7 @@ namespace PortionWise.UnitTests.Repositories
                 .Setup(DAO => DAO.UpdateRecipe(It.IsAny<RecipeEntity>()))
                 .Returns(Task.CompletedTask);
 
-            UpdateRecipeBO recipe = new UpdateRecipeBO
+            var recipe = new UpdateRecipeBO
             {
                 Id = new Guid(),
                 Name = "Tiramisu",

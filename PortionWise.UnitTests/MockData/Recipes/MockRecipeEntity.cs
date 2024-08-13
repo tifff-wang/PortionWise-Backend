@@ -1,4 +1,5 @@
 using PortionWise.Models.Ingredient.Entities;
+using PortionWise.Models.Recipe.BO;
 using PortionWise.Models.Recipe.Entities;
 
 public static class MockRecipeEntity
@@ -80,6 +81,29 @@ public static class MockRecipeEntity
                 Instruction = "",
             },
             new RecipeEntity
+            {
+                Id = _id2,
+                Name = "Chocolate Cake",
+                CreatedAt = DateTime.UtcNow,
+                PortionSize = 8,
+                Instruction = "",
+            }
+        };
+    }
+
+    public static List<RecipeBO> CreateMockSummariesBO()
+    {
+        return new List<RecipeBO>
+        {
+            new RecipeBO
+            {
+                Id = _id1,
+                Name = "Banana Bread",
+                CreatedAt = DateTime.UtcNow,
+                PortionSize = 12,
+                Instruction = "",
+            },
+            new RecipeBO
             {
                 Id = _id2,
                 Name = "Chocolate Cake",
