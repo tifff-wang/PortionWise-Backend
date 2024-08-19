@@ -23,7 +23,8 @@ namespace PortionWise.Controllers
         {
             try
             {
-                return Ok(await _recipeService.GetAllRecipeSummaries());
+                var summaries = await _recipeService.GetAllRecipeSummaries();
+                return Ok(summaries);
             }
             catch (Exception)
             {

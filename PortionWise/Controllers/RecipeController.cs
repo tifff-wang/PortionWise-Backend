@@ -10,17 +10,13 @@ namespace PortionWise.Controllers.Recipes
     [ApiController]
     public class RecipeController : ControllerBase
     {
-
         private readonly IRecipeService _recipeService;
-        public RecipeController(
-            IRecipeService recipeService
-        )
+
+        public RecipeController(IRecipeService recipeService)
         {
             _recipeService = recipeService;
         }
 
-        
-        
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -79,6 +75,7 @@ namespace PortionWise.Controllers.Recipes
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> DeleteRecipeForId(Guid id)
@@ -130,7 +127,6 @@ namespace PortionWise.Controllers.Recipes
             {
                 return StatusCode(500, ErrorDTO.internalError());
             }
-
         }
     }
 }

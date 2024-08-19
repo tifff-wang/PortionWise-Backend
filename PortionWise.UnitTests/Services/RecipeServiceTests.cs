@@ -12,7 +12,7 @@ using PortionWise.UnitTests.MockData.Recipes;
 
 namespace PortionWise.UnitTests.Services
 {
-  public class RecipeServiceTests
+    public class RecipeServiceTests
     {
         private readonly RecipeService _recipeService;
         private readonly Mock<IRecipeRepo> _mockRecipeRepo;
@@ -93,7 +93,7 @@ namespace PortionWise.UnitTests.Services
         }
 
         [Fact]
-        public async void UpdateRecipe_MissingName_ThrowException()
+        public async void CreateRecipe_MissingName_ThrowException()
         {
             var recipe = new CreateRecipeDTO
             {
@@ -108,7 +108,7 @@ namespace PortionWise.UnitTests.Services
         }
 
         [Fact]
-        public async void UpdateRecipe_InvalidPortionSize_ThrowException()
+        public async void CreateRecipe_InvalidPortionSize_ThrowException()
         {
             var recipe = new CreateRecipeDTO
             {
