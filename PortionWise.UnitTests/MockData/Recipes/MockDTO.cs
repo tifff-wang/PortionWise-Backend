@@ -3,12 +3,12 @@ using PortionWise.Models.Recipe.DTOs;
 
 namespace PortionWise.UnitTests.MockData.Recipes
 {
-  public class MockRecipeDTO
+    public class MockDTO
     {
         private static Guid _id1 = Guid.NewGuid();
         private static Guid _id2 = Guid.NewGuid();
 
-        public static List<RecipeDTO> CreateMockRecipeDTO()
+        public static List<RecipeDTO> CreateMockDTO()
         {
             return new List<RecipeDTO>
             {
@@ -62,6 +62,15 @@ namespace PortionWise.UnitTests.MockData.Recipes
                         }
                     }
                 }
+            };
+        }
+
+        public static List<PopularIngredientDTO> CreateMockPopularIngredients()
+        {
+            return new List<PopularIngredientDTO>
+            {
+                new PopularIngredientDTO { Name = "Milk" },
+                new PopularIngredientDTO { Name = "Banana" }
             };
         }
     }

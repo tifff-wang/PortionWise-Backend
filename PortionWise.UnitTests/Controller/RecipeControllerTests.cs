@@ -12,7 +12,7 @@ namespace PortionWise.UnitTests.Controller
     {
         private readonly RecipeController _recipeController;
         private readonly Mock<IRecipeService> _mockRecipeService;
-        private readonly List<RecipeDTO> _mockRecipeDTOData = MockRecipeDTO.CreateMockRecipeDTO();
+        private readonly List<RecipeDTO> _mockDTOData = MockDTO.CreateMockDTO();
         private UpdateRecipeDTO _recipeUpdate;
 
         private CreateRecipeDTO _recipeToCreate = new CreateRecipeDTO
@@ -28,7 +28,7 @@ namespace PortionWise.UnitTests.Controller
             _recipeController = new RecipeController(_mockRecipeService.Object);
             _recipeUpdate = new UpdateRecipeDTO
             {
-                Id = _mockRecipeDTOData[0].Id,
+                Id = _mockDTOData[0].Id,
                 Name = "Tiramisu",
                 PortionSize = 4,
                 Instruction = "bake, bake, bake",
@@ -42,7 +42,7 @@ namespace PortionWise.UnitTests.Controller
 
             _mockRecipeService
                 .Setup(service => service.GetRecipeById(id))
-                .Returns(Task.FromResult(_mockRecipeDTOData[0]));
+                .Returns(Task.FromResult(_mockDTOData[0]));
 
             var response = await _recipeController.GetRecipeById(id);
 
@@ -50,8 +50,8 @@ namespace PortionWise.UnitTests.Controller
             Assert.Equal(200, okResult.StatusCode);
 
             var returnedRecipe = Assert.IsType<RecipeDTO>(okResult.Value);
-            Assert.Equal(_mockRecipeDTOData[0].Id, returnedRecipe.Id);
-            Assert.Equal(_mockRecipeDTOData[0].Name, returnedRecipe.Name);
+            Assert.Equal(_mockDTOData[0].Id, returnedRecipe.Id);
+            Assert.Equal(_mockDTOData[0].Name, returnedRecipe.Name);
         }
 
         [Fact]
@@ -218,7 +218,7 @@ namespace PortionWise.UnitTests.Controller
         [Fact]
         public async void UpdateRecipeForId_NoException_Return204()
         {
-            var id = _mockRecipeDTOData[0].Id;
+            var id = _mockDTOData[0].Id;
 
             _mockRecipeService
                 .Setup(service => service.UpdateRecipe(_recipeUpdate))
@@ -233,7 +233,7 @@ namespace PortionWise.UnitTests.Controller
         [Fact]
         public async void UpdateRecipeForId_RecipeIsNull_ReturnBadRequest()
         {
-            var id = _mockRecipeDTOData[0].Id;
+            var id = _mockDTOData[0].Id;
             var response = await _recipeController.UpdateRecipeForId(id, null);
 
             var statusCode = Assert.IsType<BadRequestObjectResult>(response).StatusCode;
@@ -257,7 +257,7 @@ namespace PortionWise.UnitTests.Controller
                 .ThrowsAsync(new RecipeNotFoundException());
 
             var response = await _recipeController.UpdateRecipeForId(
-                _mockRecipeDTOData[0].Id,
+                _mockDTOData[0].Id,
                 _recipeUpdate
             );
 
@@ -273,7 +273,7 @@ namespace PortionWise.UnitTests.Controller
                 .ThrowsAsync(new Exception());
 
             var response = await _recipeController.UpdateRecipeForId(
-                _mockRecipeDTOData[0].Id,
+                _mockDTOData[0].Id,
                 _recipeUpdate
             );
 
