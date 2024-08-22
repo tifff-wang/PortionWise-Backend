@@ -3,12 +3,12 @@ using PortionWise.Models.Recipe.BO;
 
 namespace PortionWise.UnitTests.MockData.Recipes
 {
-  public class MockRecipeBO
+    public class MockBO
     {
         private static Guid _id1 = Guid.NewGuid();
         private static Guid _id2 = Guid.NewGuid();
 
-        public static List<RecipeBO> CreateMockRecipeBO()
+        public static List<RecipeBO> CreateMockBO()
         {
             return new List<RecipeBO>
             {
@@ -66,6 +66,15 @@ namespace PortionWise.UnitTests.MockData.Recipes
                         }
                     }
                 },
+            };
+        }
+
+        public static List<PopularIngredientsBO> CreateMockPopularIngredients()
+        {
+            return new List<PopularIngredientsBO>
+            {
+                new PopularIngredientsBO { Name = "Milk" },
+                new PopularIngredientsBO { Name = "Banana" }
             };
         }
     }

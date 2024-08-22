@@ -16,7 +16,7 @@ namespace PortionWise.UnitTests.Services
     {
         private readonly RecipeService _recipeService;
         private readonly Mock<IRecipeRepo> _mockRecipeRepo;
-        private readonly List<RecipeBO> _mockRecipeBO = MockRecipeBO.CreateMockRecipeBO();
+        private readonly List<RecipeBO> _mockBOData = MockBO.CreateMockBO();
 
         public RecipeServiceTests()
         {
@@ -51,10 +51,10 @@ namespace PortionWise.UnitTests.Services
         [Fact]
         public async void GetRecipeById_ReturnRecipeDTO()
         {
-            var id = _mockRecipeBO[0].Id;
+            var id = _mockBOData[0].Id;
             _mockRecipeRepo
                 .Setup(repo => repo.GetRecipeById(id))
-                .Returns(Task.FromResult(_mockRecipeBO[0]));
+                .Returns(Task.FromResult(_mockBOData[0]));
 
             var recipe = await _recipeService.GetRecipeById(id);
 
