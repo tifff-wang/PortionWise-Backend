@@ -14,8 +14,8 @@ namespace PortionWise.UnitTests.Repositories
     {
         private readonly RecipeRepo _recipeRepo;
         private readonly Mock<IRecipeDAO> _mockRecipeDAO;
-        private readonly List<RecipeEntity> _mockRecipeEntityData =
-            MockRecipeEntity.CreateMockRecipeEntity();
+        private readonly List<RecipeEntity> _mockEntityData =
+            MockEntity.CreateMockEntity();
        
         public RecipeRepoTests()
         {
@@ -36,7 +36,7 @@ namespace PortionWise.UnitTests.Repositories
         public async void GetAllRecipeSummaries_ReturnCorrectSummaries()
         {
            var mockSummariesData =
-            MockRecipeEntity.CreateMockSummariesEntity();
+            MockEntity.CreateMockSummariesEntity();
 
             _mockRecipeDAO
                 .Setup(DAO => DAO.GetAllRecipeSummaries())
@@ -57,7 +57,7 @@ namespace PortionWise.UnitTests.Repositories
             var id = new Guid();
             _mockRecipeDAO
                 .Setup(DAO => DAO.GetRecipeById(id))
-                .Returns(Task.FromResult(_mockRecipeEntityData[0]));
+                .Returns(Task.FromResult(_mockEntityData[0]));
 
             var recipe = await _recipeRepo.GetRecipeById(id);
 

@@ -8,8 +8,8 @@ namespace PortionWise.UnitTests.Database.DAO
     {
         private readonly MockDBContext _mockContext;
         private readonly RecipeDAO _recipeDAO;
-        private readonly List<RecipeEntity> _mockRecipeEntityData =
-            MockRecipeEntity.CreateMockRecipeEntity();
+        private readonly List<RecipeEntity> _mockEntityData =
+            MockEntity.CreateMockEntity();
 
         public RecipeDAOTests()
         {
@@ -21,7 +21,7 @@ namespace PortionWise.UnitTests.Database.DAO
         [Fact]
         public async void GetAllRecipeSummaries_ReturnCorrectSummaries()
         {
-            _mockContext.AddTestingData(_mockRecipeEntityData);
+            _mockContext.AddTestingData(_mockEntityData);
 
             var recipeSummaries = await _recipeDAO.GetAllRecipeSummaries();
 
@@ -37,8 +37,8 @@ namespace PortionWise.UnitTests.Database.DAO
         [Fact]
         public async void GetRecipeById_RecipeExists_ReturnRecipe()
         {
-            _mockContext.AddTestingData(_mockRecipeEntityData);
-            var id = _mockRecipeEntityData[0].Id;
+            _mockContext.AddTestingData(_mockEntityData);
+            var id = _mockEntityData[0].Id;
 
             var recipe = await _recipeDAO.GetRecipeById(id);
 
@@ -49,7 +49,7 @@ namespace PortionWise.UnitTests.Database.DAO
         [Fact]
         public async void GetRecipeById_RecipeNotExists_ThrowsException()
         {
-            var id = _mockRecipeEntityData[0].Id;
+            var id = _mockEntityData[0].Id;
 
             await Assert.ThrowsAsync<RecipeNotFoundException>(
                 async () => await _recipeDAO.GetRecipeById(id)
@@ -57,13 +57,13 @@ namespace PortionWise.UnitTests.Database.DAO
         }
 
         [Fact]
-        public async void InsertRecipe_NoException_Return3()
+        public async void InsertRecipe_NoException_Return5()
         {
-            var recipe = _mockRecipeEntityData[0];
+            var recipe = _mockEntityData[0];
 
             var affectedRow = await _recipeDAO.InsertRecipe(recipe);
 
-            Assert.Equal(3, affectedRow);
+            Assert.Equal(5, affectedRow);
             var existingRecipe = await _mockContext.Context.Recipes.FindAsync(recipe.Id);
             Assert.NotNull(existingRecipe);
         }
@@ -71,8 +71,8 @@ namespace PortionWise.UnitTests.Database.DAO
         [Fact]
         public async void DeleteRecipeForId_NoException()
         {
-            _mockContext.AddTestingData(_mockRecipeEntityData);
-            var id = _mockRecipeEntityData[0].Id;
+            _mockContext.AddTestingData(_mockEntityData);
+            var id = _mockEntityData[0].Id;
 
             await _recipeDAO.DeleteRecipeForId(id);
 
@@ -83,15 +83,15 @@ namespace PortionWise.UnitTests.Database.DAO
         public async void DeleteRecipeForId_ReciptNotExists_ThrowException()
         {
             await Assert.ThrowsAsync<RecipeNotFoundException>(
-                async () => await _recipeDAO.DeleteRecipeForId(_mockRecipeEntityData[0].Id)
+                async () => await _recipeDAO.DeleteRecipeForId(_mockEntityData[0].Id)
             );
         }
 
         [Fact]
         public async void UpdateRecipe_NoException()
         {
-            _mockContext.AddTestingData(_mockRecipeEntityData);
-            var recipe = _mockRecipeEntityData[0];
+            _mockContext.AddTestingData(_mockEntityData);
+            var recipe = _mockEntityData[0];
             recipe.Name = "Tiramisu";
             recipe.Instruction = "Bake, bake, bake";
 

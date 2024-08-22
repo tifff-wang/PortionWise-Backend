@@ -36,7 +36,7 @@ namespace PortionWise.UnitTests.Services
         [Fact]
         public async void GetAllRecipeSummaries_ReturnRecipeSummariesDTO()
         {
-            var summariesBO = MockRecipeEntity.CreateMockSummariesBO();
+            var summariesBO = MockEntity.CreateMockSummariesBO();
             _mockRecipeRepo
                 .Setup(repo => repo.GetAllRecipeSummaries())
                 .Returns(Task.FromResult(summariesBO));

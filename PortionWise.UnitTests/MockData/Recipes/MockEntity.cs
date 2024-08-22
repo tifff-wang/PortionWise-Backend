@@ -2,12 +2,12 @@ using PortionWise.Models.Ingredient.Entities;
 using PortionWise.Models.Recipe.BO;
 using PortionWise.Models.Recipe.Entities;
 
-public static class MockRecipeEntity
+public static class MockEntity
 {
     private static Guid _id1 = Guid.NewGuid();
     private static Guid _id2 = Guid.NewGuid();
 
-    public static List<RecipeEntity> CreateMockRecipeEntity()
+    public static List<RecipeEntity> CreateMockEntity()
     {
         return new List<RecipeEntity>
         {
@@ -33,6 +33,22 @@ public static class MockRecipeEntity
                         Id = Guid.NewGuid(),
                         Name = "Butter",
                         Amount = 75,
+                        Unit = "g",
+                        RecipeId = _id1,
+                    },
+                    new IngredientEntity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "Flour",
+                        Amount = 200,
+                        Unit = "g",
+                        RecipeId = _id1,
+                    },
+                    new IngredientEntity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "Milk",
+                        Amount = 100,
                         Unit = "g",
                         RecipeId = _id1,
                     }
