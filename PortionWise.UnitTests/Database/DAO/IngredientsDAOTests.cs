@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore.Update;
 using PortionWise.Database.DAOs.Ingredient;
 using PortionWise.Models.Exceptions;
 using PortionWise.Models.Ingredient.Entities;
@@ -5,7 +6,7 @@ using PortionWise.Models.Recipe.Entities;
 
 namespace PortionWise.UnitTests.Database.DAO
 {
-  public class IngredientsDAOTests
+    public class IngredientsDAOTests
     {
         private readonly MockDBContext _mockContext;
         private readonly IngredientDAO _ingredientDAO;
@@ -86,8 +87,10 @@ namespace PortionWise.UnitTests.Database.DAO
         {
             _mockContext.AddTestingData(_mockEntityData);
             var id = _mockEntityData[0].Ingredients!.First().Id;
-            await _ingredientDAO.DeleteIngredient(id);
 
+            var affectedRow = await _ingredientDAO.DeleteIngredient(id);
+
+            Assert.Equal(1, affectedRow);
             Assert.False(_mockContext.Context.Ingredients.Any(i => i.Id == id));
         }
 
