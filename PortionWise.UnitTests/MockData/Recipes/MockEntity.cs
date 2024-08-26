@@ -1,4 +1,5 @@
 using PortionWise.Models.Ingredient.Entities;
+using PortionWise.Models.Nutrition.Entity;
 using PortionWise.Models.Recipe.BO;
 using PortionWise.Models.Recipe.Entities;
 
@@ -52,7 +53,7 @@ public static class MockEntity
                         Unit = "g",
                         RecipeId = _id1,
                     }
-                }
+                },
             },
             new RecipeEntity
             {
@@ -78,6 +79,25 @@ public static class MockEntity
                         Amount = 100,
                         Unit = "g",
                         RecipeId = _id2,
+                    }
+                },
+                NutritionInfo = new List<NutritionEntity>
+                {
+                    new NutritionEntity
+                    {
+                        Id = Guid.NewGuid(),
+                        SugarGram = 10.5,
+                        FiberGram = 1.0,
+                        ServingSize = 200,
+                        SodiumMg = 200,
+                        PotassiumMg = 150,
+                        FatSaturatedGram = 2.5,
+                        FatTotalGram = 5,
+                        Calories = 180,
+                        CholesterolMg = 30,
+                        ProteinGram = 2.5,
+                        CarbohydratesTotalGram = 27,
+                        RecipeId = _id2
                     }
                 }
             },

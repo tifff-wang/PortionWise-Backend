@@ -37,19 +37,28 @@ namespace PortionWise.Services
                 throw new RecipeNotFoundException();
             }
 
-            if(recipe.Ingredients == null) 
+            if (recipe.Ingredients == null)
             {
-              throw new IngredientNotFoundException();
+                throw new IngredientNotFoundException();
             }
 
-            IEnumerable<string> ingredientStrings = recipe.Ingredients.Select(
+            var ingredientString = IngredientsToString(recipe.Ingredients);
+
+            var totalNutrition = await _nuritionRepo.GetTotalNutritionInfo(
+                ingredientString,
+                recipeId
+            );
+
+            return _mapper.Map<TotalNutritionDTO>(totalNutrition);
+        }
+
+        public string IngredientsToString(List<IngredientDTO> ingredients)
+        {
+            IEnumerable<string> ingredientStrings = ingredients.Select(
                 i => $"{Math.Round(i.Amount)}{i.Unit} {i.Name}"
             );
             string ingredientString = string.Join(" and ", ingredientStrings);
-            
-            var totalNutrition = await _nuritionRepo.GetTotalNutritionInfo(ingredientString, recipeId);
-
-            return _mapper.Map<TotalNutritionDTO>(totalNutrition);
+            return ingredientString;
         }
     }
 }

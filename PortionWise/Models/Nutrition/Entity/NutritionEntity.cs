@@ -21,6 +21,6 @@ namespace PortionWise.Models.Nutrition.Entity
         public DateTime? CacheExpirationTime { get; set; }
 
         public required Guid RecipeId { get; set; }
-        public required RecipeEntity? Recipe { get; set; }
+        public RecipeEntity? Recipe { get; set; }
     }
 }

@@ -39,9 +39,7 @@ namespace PortionWise.Repositories
             }
 
             bool isValid = !nutritionFromDB?.IsExpired() ?? false;
-            Console.WriteLine($"nutritionFromDB: {nutritionFromDB}");
-            Console.WriteLine($"!nutritionFromDB?.IsExpired(): {!nutritionFromDB?.IsExpired()}");
-            Console.WriteLine($"isValid: {isValid}");
+
             if (!isValid)
             {
                 if (nutritionFromDB?.IsExpired() == true)
@@ -79,7 +77,7 @@ namespace PortionWise.Repositories
         }
     }
 
-    static class NutritionDLExtensions
+    public static class NutritionDLExtensions
     {
         public static TotalNutritionDL SumNutritionInfo(this NutritionDL nutritionData)
         {
