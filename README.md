@@ -57,6 +57,19 @@ The following image indicates the data flow between layers and components
 
 4. open `http://localhost:5290/swagger/index.html` in the browser to access swagger.
 
-## What's next
+## Unit Tests
 
--   Add unit tests
+![](Public/test_coverage.png)
+
+To ensure the reliability and maintainability of the PortionWise-Backend, I used Xunit as the testing framework to perform a thorough testing on each method across the 4 component layers of the application (more than 80% testing coverage), ensuring that both happy and unhappy pathes are validated.
+
+I used Moq and SQLite in memory database to create mock objects and database bahaviour for the tests. By injecting these mocks into the components, it helped me to ensure that each unit test is focused only on the behavior of the component it targets without relying on the behavior of its external dependencies.
+
+### Layers Tested:
+-   **Controllers**: I test the controllers by mocking the services they depend on. Verifying that they handle requests correctly and return the expected results and statuscode.
+
+- **Services**: The services are tested by mocking the repository they depend on. Ensuring they correctly handle business logic, data mapping and error handling.
+
+- **Repositories**: Testing the repository layer involves mocking data access objects to ensure that the repositories interact correctly with the database, caching, and external data sources.
+
+- **DAOs**: I set up a mock dbContext using in memory database, and adding to and clear up mock data from the dbContext for each tests to test the SQL query logic and error handling.
