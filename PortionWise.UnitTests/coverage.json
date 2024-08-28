@@ -1,0 +1,3677 @@
+{
+  "PortionWise.dll": {
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/UserSecretConfig.cs": {
+      "ApiKeyStore": {
+        "System.String ApiKeyStore::get_NutritionApiKey()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Configs.UserSecretConfig": {
+        "System.Void PortionWise.Configs.UserSecretConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/DLs/NutritionDL.cs": {
+      "NutritionItem": {
+        "System.Double NutritionItem::get_SugarGram()": {
+          "Lines": {
+            "15": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_FiberGram()": {
+          "Lines": {
+            "18": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_ServingSize()": {
+          "Lines": {
+            "21": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_SodiumMg()": {
+          "Lines": {
+            "24": 13
+          },
+          "Branches": []
+        },
+        "System.String NutritionItem::get_Name()": {
+          "Lines": {
+            "27": 8
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_PotassiumMg()": {
+          "Lines": {
+            "30": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_FatSaturatedGram()": {
+          "Lines": {
+            "33": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_FatTotalGram()": {
+          "Lines": {
+            "36": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_Calories()": {
+          "Lines": {
+            "39": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_CholesterolMg()": {
+          "Lines": {
+            "42": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_ProteinGram()": {
+          "Lines": {
+            "45": 13
+          },
+          "Branches": []
+        },
+        "System.Double NutritionItem::get_CarbohydratesTotalGram()": {
+          "Lines": {
+            "48": 13
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Nutrition.DLs.NutritionDL": {
+        "System.Collections.Generic.List`1<NutritionItem> PortionWise.Models.Nutrition.DLs.NutritionDL::get_Items()": {
+          "Lines": {
+            "8": 51
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "3": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "14": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 76,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Services/IngredientService.cs": {
+      "PortionWise.Services.IngredientService": {
+        "System.Void PortionWise.Services.IngredientService::.ctor(PortionWise.Repositories.IIngredientRepo,AutoMapper.IMapper)": {
+          "Lines": {
+            "23": 10,
+            "24": 10,
+            "25": 10,
+            "26": 10,
+            "27": 10
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Services.IngredientService/<CreateIngredient>d__5": {
+        "System.Void PortionWise.Services.IngredientService/<CreateIngredient>d__5::MoveNext()": {
+          "Lines": {
+            "51": 3,
+            "52": 3,
+            "53": 1,
+            "54": 1,
+            "56": 2,
+            "57": 1,
+            "58": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 52,
+              "Offset": 36,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 56,
+              "Offset": 68,
+              "EndOffset": 70,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 56,
+              "Offset": 68,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.IngredientService/<DeleteIngredient>d__6": {
+        "System.Void PortionWise.Services.IngredientService/<DeleteIngredient>d__6::MoveNext()": {
+          "Lines": {
+            "66": 2,
+            "67": 2,
+            "68": 1,
+            "69": 1,
+            "72": 1,
+            "73": 1
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.IngredientService/<GetIngredientById>d__4": {
+        "System.Void PortionWise.Services.IngredientService/<GetIngredientById>d__4::MoveNext()": {
+          "Lines": {
+            "40": 2,
+            "41": 2,
+            "42": 1,
+            "43": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.IngredientService/<GetPopularIngredientNames>d__3": {
+        "System.Void PortionWise.Services.IngredientService/<GetPopularIngredientNames>d__3::MoveNext()": {
+          "Lines": {
+            "30": 2,
+            "31": 2,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 29,
+              "EndOffset": 43,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.IngredientService/<UpdateIngredient>d__7": {
+        "System.Void PortionWise.Services.IngredientService/<UpdateIngredient>d__7::MoveNext()": {
+          "Lines": {
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Services/NutritionService.cs": {
+      "PortionWise.Services.NutritionService": {
+        "System.String PortionWise.Services.NutritionService::IngredientsToString(System.Collections.Generic.List`1<PortionWise.Models.Ingredient.DTOs.IngredientDTO>)": {
+          "Lines": {
+            "56": 3,
+            "57": 3,
+            "58": 5,
+            "59": 3,
+            "60": 3,
+            "61": 3,
+            "62": 3
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Services.NutritionService::.ctor(PortionWise.Services.IRecipeService,PortionWise.Repositories.INutritionRepo,AutoMapper.IMapper)": {
+          "Lines": {
+            "21": 5,
+            "22": 5,
+            "23": 5,
+            "24": 5,
+            "25": 5,
+            "26": 5,
+            "27": 5,
+            "28": 5,
+            "29": 5,
+            "30": 5
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Services.NutritionService/<GetRecipeNutrition>d__4": {
+        "System.Void PortionWise.Services.NutritionService/<GetRecipeNutrition>d__4::MoveNext()": {
+          "Lines": {
+            "33": 3,
+            "34": 3,
+            "35": 3,
+            "36": 1,
+            "37": 1,
+            "40": 2,
+            "41": 1,
+            "42": 1,
+            "45": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "52": 1,
+            "53": 1
+          },
+          "Branches": [
+            {
+              "Line": 35,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 35,
+              "Offset": 175,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 40,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 40,
+              "Offset": 202,
+              "EndOffset": 211,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Services/RecipeService.cs": {
+      "PortionWise.Services.RecipeService": {
+        "System.Void PortionWise.Services.RecipeService::.ctor(PortionWise.Repository.IRecipeRepo,AutoMapper.IMapper)": {
+          "Lines": {
+            "24": 9,
+            "25": 9,
+            "26": 9,
+            "27": 9,
+            "28": 9
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Services.RecipeService/<CreateRecipe>d__5": {
+        "System.Void PortionWise.Services.RecipeService/<CreateRecipe>d__5::MoveNext()": {
+          "Lines": {
+            "48": 3,
+            "49": 3,
+            "50": 1,
+            "51": 1,
+            "53": 2,
+            "54": 1,
+            "55": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 36,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 53,
+              "Offset": 64,
+              "EndOffset": 66,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 64,
+              "EndOffset": 73,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.RecipeService/<DeleteRecipeForId>d__6": {
+        "System.Void PortionWise.Services.RecipeService/<DeleteRecipeForId>d__6::MoveNext()": {
+          "Lines": {
+            "63": 2,
+            "64": 2,
+            "65": 1,
+            "66": 1,
+            "69": 1,
+            "70": 1
+          },
+          "Branches": [
+            {
+              "Line": 64,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 64,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.RecipeService/<GetAllRecipeSummaries>d__3": {
+        "System.Void PortionWise.Services.RecipeService/<GetAllRecipeSummaries>d__3::MoveNext()": {
+          "Lines": {
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Services.RecipeService/<GetRecipeById>d__4": {
+        "System.Void PortionWise.Services.RecipeService/<GetRecipeById>d__4::MoveNext()": {
+          "Lines": {
+            "37": 2,
+            "38": 2,
+            "39": 1,
+            "40": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Services.RecipeService/<UpdateRecipe>d__7": {
+        "System.Void PortionWise.Services.RecipeService/<UpdateRecipe>d__7::MoveNext()": {
+          "Lines": {
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Repositories/RecipeRepo.cs": {
+      "PortionWise.Repository.RecipeRepo": {
+        "System.Void PortionWise.Repository.RecipeRepo::.ctor(PortionWise.Database.DAOs.Recipe.IRecipeDAO,AutoMapper.IMapper)": {
+          "Lines": {
+            "23": 5,
+            "24": 5,
+            "25": 5,
+            "26": 5,
+            "27": 5
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repository.RecipeRepo/<CreateRecipe>d__5": {
+        "System.Void PortionWise.Repository.RecipeRepo/<CreateRecipe>d__5::MoveNext()": {
+          "Lines": {
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repository.RecipeRepo/<DeleteRecipeForId>d__6": {
+        "System.Void PortionWise.Repository.RecipeRepo/<DeleteRecipeForId>d__6::MoveNext()": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "50": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repository.RecipeRepo/<GetAllRecipeSummaries>d__3": {
+        "System.Void PortionWise.Repository.RecipeRepo/<GetAllRecipeSummaries>d__3::MoveNext()": {
+          "Lines": {
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repository.RecipeRepo/<GetRecipeById>d__4": {
+        "System.Void PortionWise.Repository.RecipeRepo/<GetRecipeById>d__4::MoveNext()": {
+          "Lines": {
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repository.RecipeRepo/<UpdateRecipe>d__7": {
+        "System.Void PortionWise.Repository.RecipeRepo/<UpdateRecipe>d__7::MoveNext()": {
+          "Lines": {
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Repositories/IngredientRepo.cs": {
+      "PortionWise.Repositories.IngredientRepo": {
+        "System.Void PortionWise.Repositories.IngredientRepo::.ctor(PortionWise.Database.DAOs.Ingredient.IIngredientDAO,PortionWise.Database.DAOs.Recipe.INutritionDAO,AutoMapper.IMapper)": {
+          "Lines": {
+            "26": 5,
+            "27": 5,
+            "28": 5,
+            "29": 5,
+            "30": 5,
+            "31": 5,
+            "32": 5,
+            "33": 5,
+            "34": 5,
+            "35": 5
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.IngredientRepo/<CreateIngredient>d__6": {
+        "System.Void PortionWise.Repositories.IngredientRepo/<CreateIngredient>d__6::MoveNext()": {
+          "Lines": {
+            "50": 1,
+            "51": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.IngredientRepo/<DeleteIngredient>d__7": {
+        "System.Void PortionWise.Repositories.IngredientRepo/<DeleteIngredient>d__7::MoveNext()": {
+          "Lines": {
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 0,
+            "62": 0,
+            "64": 1,
+            "65": 1,
+            "66": 1
+          },
+          "Branches": [
+            {
+              "Line": 60,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 60,
+              "Offset": 187,
+              "EndOffset": 196,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Repositories.IngredientRepo/<GetIngredientById>d__5": {
+        "System.Void PortionWise.Repositories.IngredientRepo/<GetIngredientById>d__5::MoveNext()": {
+          "Lines": {
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.IngredientRepo/<GetPopularIngredientNames>d__4": {
+        "System.Void PortionWise.Repositories.IngredientRepo/<GetPopularIngredientNames>d__4::MoveNext()": {
+          "Lines": {
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.IngredientRepo/<UpdateIngredient>d__8": {
+        "System.Void PortionWise.Repositories.IngredientRepo/<UpdateIngredient>d__8::MoveNext()": {
+          "Lines": {
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Repositories/NutritionRepo.cs": {
+      "PortionWise.Repositories.NutritionRepo": {
+        "System.Void PortionWise.Repositories.NutritionRepo::.ctor(PortionWise.Api.INutritionApi,PortionWise.Database.DAOs.Recipe.INutritionDAO,AutoMapper.IMapper)": {
+          "Lines": {
+            "22": 6,
+            "23": 6,
+            "24": 6,
+            "25": 6,
+            "26": 6,
+            "27": 6
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.NutritionRepo/<CacheNutritionInfoToDB>d__6": {
+        "System.Void PortionWise.Repositories.NutritionRepo/<CacheNutritionInfoToDB>d__6::MoveNext()": {
+          "Lines": {
+            "65": 3,
+            "66": 3,
+            "67": 3,
+            "68": 3,
+            "69": 3
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.NutritionRepo/<GetTotalNutritionInfo>d__4": {
+        "System.Void PortionWise.Repositories.NutritionRepo/<GetTotalNutritionInfo>d__4::MoveNext()": {
+          "Lines": {
+            "30": 3,
+            "31": 3,
+            "33": 3,
+            "34": 3,
+            "35": 2,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "41": 3,
+            "43": 3,
+            "44": 2,
+            "45": 2,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "50": 2,
+            "51": 2,
+            "52": 2,
+            "55": 1,
+            "56": 3
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 217,
+              "EndOffset": 219,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 217,
+              "EndOffset": 223,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 249,
+              "EndOffset": 254,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 262,
+              "EndOffset": 264,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 262,
+              "EndOffset": 268,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 277,
+              "EndOffset": 279,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 277,
+              "EndOffset": 396,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 249,
+              "EndOffset": 671,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Repositories.NutritionRepo/<LoadTotalNutritionFromApi>d__5": {
+        "System.Void PortionWise.Repositories.NutritionRepo/<LoadTotalNutritionFromApi>d__5::MoveNext()": {
+          "Lines": {
+            "59": 2,
+            "60": 2,
+            "61": 2,
+            "62": 2
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Repositories.NutritionEntityExtensions": {
+        "System.Boolean PortionWise.Repositories.NutritionEntityExtensions::IsExpired(PortionWise.Models.Nutrition.Entity.NutritionEntity)": {
+          "Lines": {
+            "75": 3,
+            "76": 3,
+            "77": 3
+          },
+          "Branches": [
+            {
+              "Line": 76,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 76,
+              "Offset": 21,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "PortionWise.Repositories.NutritionDLExtensions": {
+        "PortionWise.Models.Nutrition.DLs.TotalNutritionDL PortionWise.Repositories.NutritionDLExtensions::SumNutritionInfo(PortionWise.Models.Nutrition.DLs.NutritionDL)": {
+          "Lines": {
+            "83": 4,
+            "84": 4,
+            "85": 4,
+            "86": 5,
+            "87": 5,
+            "88": 5,
+            "89": 5,
+            "90": 5,
+            "91": 4,
+            "92": 5,
+            "93": 4,
+            "94": 4,
+            "95": 5,
+            "96": 5,
+            "97": 5,
+            "98": 5,
+            "99": 4,
+            "100": 5,
+            "101": 4,
+            "102": 4,
+            "103": 4,
+            "104": 4,
+            "105": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/RecipeMapping.cs": {
+      "PortionWise.Models.Recipe.RecipeMapping": {
+        "System.Void PortionWise.Models.Recipe.RecipeMapping::.ctor()": {
+          "Lines": {
+            "11": 14,
+            "12": 14,
+            "13": 14,
+            "15": 14,
+            "16": 14,
+            "17": 14,
+            "19": 14,
+            "20": 14,
+            "21": 14,
+            "22": 28,
+            "24": 14,
+            "25": 14,
+            "26": 28,
+            "27": 14
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/Entity/RecipeEntity.cs": {
+      "PortionWise.Models.Recipe.Entities.RecipeEntity": {
+        "System.Guid PortionWise.Models.Recipe.Entities.RecipeEntity::get_Id()": {
+          "Lines": {
+            "10": 105
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.Entities.RecipeEntity::get_Name()": {
+          "Lines": {
+            "11": 94
+          },
+          "Branches": []
+        },
+        "System.DateTime PortionWise.Models.Recipe.Entities.RecipeEntity::get_CreatedAt()": {
+          "Lines": {
+            "12": 87
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.Entities.RecipeEntity::get_PortionSize()": {
+          "Lines": {
+            "13": 86
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.Entities.RecipeEntity::get_Instruction()": {
+          "Lines": {
+            "14": 92
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Ingredient.Entities.IngredientEntity> PortionWise.Models.Recipe.Entities.RecipeEntity::get_Ingredients()": {
+          "Lines": {
+            "15": 87
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Nutrition.Entity.NutritionEntity> PortionWise.Models.Recipe.Entities.RecipeEntity::get_NutritionInfo()": {
+          "Lines": {
+            "16": 44
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/DTOs/CreateRecipeDTO.cs": {
+      "PortionWise.Models.Recipe.DTOs.CreateRecipeDTO": {
+        "System.String PortionWise.Models.Recipe.DTOs.CreateRecipeDTO::get_Name()": {
+          "Lines": {
+            "8": 26
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.DTOs.CreateRecipeDTO::get_PortionSize()": {
+          "Lines": {
+            "9": 25
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.CreateRecipeDTO::get_Instruction()": {
+          "Lines": {
+            "10": 22
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO> PortionWise.Models.Recipe.DTOs.CreateRecipeDTO::get_Ingredients()": {
+          "Lines": {
+            "11": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/DTOs/RecipeDTO.cs": {
+      "PortionWise.Models.Recipe.DTOs.RecipeDTO": {
+        "System.Guid PortionWise.Models.Recipe.DTOs.RecipeDTO::get_Id()": {
+          "Lines": {
+            "8": 101
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.RecipeDTO::get_Name()": {
+          "Lines": {
+            "9": 52
+          },
+          "Branches": []
+        },
+        "System.DateTime PortionWise.Models.Recipe.DTOs.RecipeDTO::get_CreatedAt()": {
+          "Lines": {
+            "10": 49
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.DTOs.RecipeDTO::get_PortionSize()": {
+          "Lines": {
+            "11": 49
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.RecipeDTO::get_Instruction()": {
+          "Lines": {
+            "12": 49
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Ingredient.DTOs.IngredientDTO> PortionWise.Models.Recipe.DTOs.RecipeDTO::get_Ingredients()": {
+          "Lines": {
+            "13": 78
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO> PortionWise.Models.Recipe.DTOs.RecipeDTO::get_NutritionInfo()": {
+          "Lines": {
+            "14": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/DTOs/RecipeSummaryDTO.cs": {
+      "PortionWise.Models.Recipe.DTOs.RecipeSummaryDTO": {
+        "System.Guid PortionWise.Models.Recipe.DTOs.RecipeSummaryDTO::get_Id()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.RecipeSummaryDTO::get_Name()": {
+          "Lines": {
+            "9": 5
+          },
+          "Branches": []
+        },
+        "System.DateTime PortionWise.Models.Recipe.DTOs.RecipeSummaryDTO::get_CreatedAt()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/DTOs/UpdateRecipeDTO.cs": {
+      "PortionWise.Models.Recipe.DTOs.UpdateRecipeDTO": {
+        "System.Guid PortionWise.Models.Recipe.DTOs.UpdateRecipeDTO::get_Id()": {
+          "Lines": {
+            "5": 24
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.UpdateRecipeDTO::get_Name()": {
+          "Lines": {
+            "6": 20
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.DTOs.UpdateRecipeDTO::get_PortionSize()": {
+          "Lines": {
+            "7": 20
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.DTOs.UpdateRecipeDTO::get_Instruction()": {
+          "Lines": {
+            "8": 20
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/BOs/UpdateRecipeBO.cs": {
+      "PortionWise.Models.Recipe.BOs.UpdateRecipeBO": {
+        "System.Guid PortionWise.Models.Recipe.BOs.UpdateRecipeBO::get_Id()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.BOs.UpdateRecipeBO::get_Name()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.BOs.UpdateRecipeBO::get_PortionSize()": {
+          "Lines": {
+            "12": 3
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.BOs.UpdateRecipeBO::get_Instruction()": {
+          "Lines": {
+            "13": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Recipe/BOs/RecipeBO.cs": {
+      "PortionWise.Models.Recipe.BO.RecipeBO": {
+        "System.Guid PortionWise.Models.Recipe.BO.RecipeBO::get_Id()": {
+          "Lines": {
+            "8": 51
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.BO.RecipeBO::get_Name()": {
+          "Lines": {
+            "9": 48
+          },
+          "Branches": []
+        },
+        "System.DateTime PortionWise.Models.Recipe.BO.RecipeBO::get_CreatedAt()": {
+          "Lines": {
+            "10": 47
+          },
+          "Branches": []
+        },
+        "System.Int32 PortionWise.Models.Recipe.BO.RecipeBO::get_PortionSize()": {
+          "Lines": {
+            "11": 45
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Recipe.BO.RecipeBO::get_Instruction()": {
+          "Lines": {
+            "12": 47
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Ingredient.BOs.IngredientBO> PortionWise.Models.Recipe.BO.RecipeBO::get_Ingredients()": {
+          "Lines": {
+            "13": 44
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<PortionWise.Models.Nutrition.BOs.TotalNutritionBO> PortionWise.Models.Recipe.BO.RecipeBO::get_NutritionInfo()": {
+          "Lines": {
+            "14": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/NutritionMapping.cs": {
+      "PortionWise.Models.Nutrition.NutritionMapping": {
+        "System.Void PortionWise.Models.Nutrition.NutritionMapping::.ctor()": {
+          "Lines": {
+            "12": 11,
+            "13": 11,
+            "14": 11,
+            "15": 11,
+            "16": 11,
+            "18": 11,
+            "19": 11,
+            "20": 11,
+            "21": 11,
+            "22": 11,
+            "23": 22,
+            "24": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/Entity/NutritionEntity.cs": {
+      "PortionWise.Models.Nutrition.Entity.NutritionEntity": {
+        "System.Guid PortionWise.Models.Nutrition.Entity.NutritionEntity::get_Id()": {
+          "Lines": {
+            "9": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_SugarGram()": {
+          "Lines": {
+            "10": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_FiberGram()": {
+          "Lines": {
+            "11": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_ServingSize()": {
+          "Lines": {
+            "12": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_SodiumMg()": {
+          "Lines": {
+            "13": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_PotassiumMg()": {
+          "Lines": {
+            "14": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_FatSaturatedGram()": {
+          "Lines": {
+            "15": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_FatTotalGram()": {
+          "Lines": {
+            "16": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_Calories()": {
+          "Lines": {
+            "17": 45
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_CholesterolMg()": {
+          "Lines": {
+            "18": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_ProteinGram()": {
+          "Lines": {
+            "19": 44
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.Entity.NutritionEntity::get_CarbohydratesTotalGram()": {
+          "Lines": {
+            "20": 44
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> PortionWise.Models.Nutrition.Entity.NutritionEntity::get_CacheExpirationTime()": {
+          "Lines": {
+            "21": 7
+          },
+          "Branches": []
+        },
+        "System.Guid PortionWise.Models.Nutrition.Entity.NutritionEntity::get_RecipeId()": {
+          "Lines": {
+            "23": 43
+          },
+          "Branches": []
+        },
+        "PortionWise.Models.Recipe.Entities.RecipeEntity PortionWise.Models.Nutrition.Entity.NutritionEntity::get_Recipe()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/DTOs/TotalNutritionDTO.cs": {
+      "PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO": {
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_SugarGram()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_FiberGram()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_ServingSize()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_SodiumMg()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_PotassiumMg()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_FatSaturatedGram()": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_FatTotalGram()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_Calories()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_CholesterolMg()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_ProteinGram()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DTOs.TotalNutritionDTO::get_CarbohydratesTotalGram()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/DLs/TotalNutritionDL.cs": {
+      "PortionWise.Models.Nutrition.DLs.TotalNutritionDL": {
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_SugarGram()": {
+          "Lines": {
+            "5": 16
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_FiberGram()": {
+          "Lines": {
+            "6": 16
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_ServingSize()": {
+          "Lines": {
+            "7": 16
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_SodiumMg()": {
+          "Lines": {
+            "8": 12
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_PotassiumMg()": {
+          "Lines": {
+            "9": 12
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_FatSaturatedGram()": {
+          "Lines": {
+            "10": 12
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_FatTotalGram()": {
+          "Lines": {
+            "11": 16
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_Calories()": {
+          "Lines": {
+            "12": 16
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_CholesterolMg()": {
+          "Lines": {
+            "13": 12
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_ProteinGram()": {
+          "Lines": {
+            "14": 12
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.DLs.TotalNutritionDL::get_CarbohydratesTotalGram()": {
+          "Lines": {
+            "15": 12
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Nutrition/BOs/TotalNutritionBO.cs": {
+      "PortionWise.Models.Nutrition.BOs.TotalNutritionBO": {
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_SugarGram()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_FiberGram()": {
+          "Lines": {
+            "6": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_ServingSize()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_SodiumMg()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_PotassiumMg()": {
+          "Lines": {
+            "9": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_FatSaturatedGram()": {
+          "Lines": {
+            "10": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_FatTotalGram()": {
+          "Lines": {
+            "11": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_Calories()": {
+          "Lines": {
+            "12": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_CholesterolMg()": {
+          "Lines": {
+            "13": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_ProteinGram()": {
+          "Lines": {
+            "14": 5
+          },
+          "Branches": []
+        },
+        "System.Double PortionWise.Models.Nutrition.BOs.TotalNutritionBO::get_CarbohydratesTotalGram()": {
+          "Lines": {
+            "15": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/IngredientMapping.cs": {
+      "PortionWise.Models.Ingredient.IngredientMapping": {
+        "System.Void PortionWise.Models.Ingredient.IngredientMapping::.ctor()": {
+          "Lines": {
+            "10": 29,
+            "11": 29,
+            "12": 29,
+            "13": 29,
+            "14": 29,
+            "15": 29,
+            "16": 29,
+            "18": 29,
+            "19": 58,
+            "21": 29,
+            "22": 58,
+            "23": 29
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/Entities/IngredientEntity.cs": {
+      "PortionWise.Models.Ingredient.Entities.IngredientEntity": {
+        "System.Guid PortionWise.Models.Ingredient.Entities.IngredientEntity::get_Id()": {
+          "Lines": {
+            "10": 249
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.Entities.IngredientEntity::get_Name()": {
+          "Lines": {
+            "11": 243
+          },
+          "Branches": []
+        },
+        "System.Decimal PortionWise.Models.Ingredient.Entities.IngredientEntity::get_Amount()": {
+          "Lines": {
+            "12": 244
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.Entities.IngredientEntity::get_Unit()": {
+          "Lines": {
+            "13": 244
+          },
+          "Branches": []
+        },
+        "System.Guid PortionWise.Models.Ingredient.Entities.IngredientEntity::get_RecipeId()": {
+          "Lines": {
+            "15": 251
+          },
+          "Branches": []
+        },
+        "PortionWise.Models.Recipe.Entities.RecipeEntity PortionWise.Models.Ingredient.Entities.IngredientEntity::get_Recipe()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/DTOs/CreateIngredientDTO.cs": {
+      "PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO": {
+        "System.String PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO::get_Name()": {
+          "Lines": {
+            "5": 30
+          },
+          "Branches": []
+        },
+        "System.Decimal PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO::get_Amount()": {
+          "Lines": {
+            "6": 29
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO::get_Unit()": {
+          "Lines": {
+            "7": 26
+          },
+          "Branches": []
+        },
+        "System.Guid PortionWise.Models.Ingredient.DTOs.CreateIngredientDTO::get_RecipeId()": {
+          "Lines": {
+            "8": 26
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/DTOs/IngredientDTO.cs": {
+      "PortionWise.Models.Ingredient.DTOs.IngredientDTO": {
+        "System.Guid PortionWise.Models.Ingredient.DTOs.IngredientDTO::get_Id()": {
+          "Lines": {
+            "5": 156
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.DTOs.IngredientDTO::get_Name()": {
+          "Lines": {
+            "6": 132
+          },
+          "Branches": []
+        },
+        "System.Decimal PortionWise.Models.Ingredient.DTOs.IngredientDTO::get_Amount()": {
+          "Lines": {
+            "7": 129
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.DTOs.IngredientDTO::get_Unit()": {
+          "Lines": {
+            "8": 129
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/DTOs/PopularIngredientDTO.cs": {
+      "PortionWise.Models.Ingredient.DTOs.PopularIngredientDTO": {
+        "System.String PortionWise.Models.Ingredient.DTOs.PopularIngredientDTO::get_Name()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/BOs/IngredientBO.cs": {
+      "PortionWise.Models.Ingredient.BOs.IngredientBO": {
+        "System.Guid PortionWise.Models.Ingredient.BOs.IngredientBO::get_Id()": {
+          "Lines": {
+            "5": 88
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.BOs.IngredientBO::get_Name()": {
+          "Lines": {
+            "6": 88
+          },
+          "Branches": []
+        },
+        "System.Decimal PortionWise.Models.Ingredient.BOs.IngredientBO::get_Amount()": {
+          "Lines": {
+            "7": 87
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.BOs.IngredientBO::get_Unit()": {
+          "Lines": {
+            "8": 87
+          },
+          "Branches": []
+        },
+        "System.Guid PortionWise.Models.Ingredient.BOs.IngredientBO::get_RecipeId()": {
+          "Lines": {
+            "10": 85
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/BOs/PopularIngredientsBO.cs": {
+      "PortionWise.Models.Ingredient.BOs.PopularIngredientsBO": {
+        "System.String PortionWise.Models.Ingredient.BOs.PopularIngredientsBO::get_Name()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Ingredient/BOs/UpdateIngredientBO.cs": {
+      "PortionWise.Models.Ingredient.BOs.UpdateIngredientBO": {
+        "System.Guid PortionWise.Models.Ingredient.BOs.UpdateIngredientBO::get_Id()": {
+          "Lines": {
+            "5": 4
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.BOs.UpdateIngredientBO::get_Name()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal PortionWise.Models.Ingredient.BOs.UpdateIngredientBO::get_Amount()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Ingredient.BOs.UpdateIngredientBO::get_Unit()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Exceptions/IngredientExceptions.cs": {
+      "PortionWise.Models.Exceptions.IngredientNotFoundException": {
+        "System.Void PortionWise.Models.Exceptions.IngredientNotFoundException::.ctor()": {
+          "Lines": {
+            "10": 7
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.IngredientMissingIdException": {
+        "System.Void PortionWise.Models.Exceptions.IngredientMissingIdException::.ctor()": {
+          "Lines": {
+            "15": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.IngredientMissingNameException": {
+        "System.Void PortionWise.Models.Exceptions.IngredientMissingNameException::.ctor()": {
+          "Lines": {
+            "20": 2
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.IngredientInvalidAmountException": {
+        "System.Void PortionWise.Models.Exceptions.IngredientInvalidAmountException::.ctor()": {
+          "Lines": {
+            "25": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Exceptions/NutritionException.cs": {
+      "PortionWise.Models.Exceptions.NutritionInfoNotFoundException": {
+        "System.Void PortionWise.Models.Exceptions.NutritionInfoNotFoundException::.ctor()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Exceptions/RecipeExceptions.cs": {
+      "PortionWise.Models.Exceptions.RecipeMissingIdException": {
+        "System.Void PortionWise.Models.Exceptions.RecipeMissingIdException::.ctor()": {
+          "Lines": {
+            "5": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.RecipeMissingNameException": {
+        "System.Void PortionWise.Models.Exceptions.RecipeMissingNameException::.ctor()": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.RecipeInvalidPortionSizeException": {
+        "System.Void PortionWise.Models.Exceptions.RecipeInvalidPortionSizeException::.ctor()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Models.Exceptions.RecipeNotFoundException": {
+        "System.Void PortionWise.Models.Exceptions.RecipeNotFoundException::.ctor()": {
+          "Lines": {
+            "20": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Models/Errors/ErrorDTO.cs": {
+      "PortionWise.Models.Errors.ErrorDTO": {
+        "System.String PortionWise.Models.Errors.ErrorDTO::get_Title()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String PortionWise.Models.Errors.ErrorDTO::get_Detail()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "PortionWise.Models.Errors.ErrorDTO PortionWise.Models.Errors.ErrorDTO::internalError()": {
+          "Lines": {
+            "18": 11,
+            "19": 11,
+            "20": 11
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Models.Errors.ErrorDTO::.ctor(System.String,System.String)": {
+          "Lines": {
+            "8": 34,
+            "9": 34,
+            "10": 34,
+            "11": 34,
+            "12": 34,
+            "13": 34,
+            "14": 34,
+            "15": 34
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240604033923_InitialDatabase.cs": {
+      "PortionWise.Migrations.InitialDatabase": {
+        "System.Void PortionWise.Migrations.InitialDatabase::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Migrations.InitialDatabase::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240604033923_InitialDatabase.Designer.cs": {
+      "PortionWise.Migrations.InitialDatabase": {
+        "System.Void PortionWise.Migrations.InitialDatabase::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240605085021_updateRecipeDeleteBehavior.cs": {
+      "PortionWise.Migrations.updateRecipeDeleteBehavior": {
+        "System.Void PortionWise.Migrations.updateRecipeDeleteBehavior::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "12": 0,
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Migrations.updateRecipeDeleteBehavior::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "18": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240605085021_updateRecipeDeleteBehavior.Designer.cs": {
+      "PortionWise.Migrations.updateRecipeDeleteBehavior": {
+        "System.Void PortionWise.Migrations.updateRecipeDeleteBehavior::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "90": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240718021515_addNutriotionEntity.cs": {
+      "PortionWise.Migrations.addNutriotionEntity": {
+        "System.Void PortionWise.Migrations.addNutriotionEntity::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Migrations.addNutriotionEntity::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240718021515_addNutriotionEntity.Designer.cs": {
+      "PortionWise.Migrations.addNutriotionEntity": {
+        "System.Void PortionWise.Migrations.addNutriotionEntity::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "151": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240718031041_addNutriotionInfoCacheExpirationDate.cs": {
+      "PortionWise.Migrations.addNutriotionInfoCacheExpirationDate": {
+        "System.Void PortionWise.Migrations.addNutriotionInfoCacheExpirationDate::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Migrations.addNutriotionInfoCacheExpirationDate::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240718031041_addNutriotionInfoCacheExpirationDate.Designer.cs": {
+      "PortionWise.Migrations.addNutriotionInfoCacheExpirationDate": {
+        "System.Void PortionWise.Migrations.addNutriotionInfoCacheExpirationDate::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "154": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240813034203_CapitalisePortionSize.cs": {
+      "PortionWise.Migrations.CapitalisePortionSize": {
+        "System.Void PortionWise.Migrations.CapitalisePortionSize::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Migrations.CapitalisePortionSize::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/20240813034203_CapitalisePortionSize.Designer.cs": {
+      "PortionWise.Migrations.CapitalisePortionSize": {
+        "System.Void PortionWise.Migrations.CapitalisePortionSize::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "154": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Migrations/ApplicationDBContextModelSnapshot.cs": {
+      "PortionWise.Migrations.ApplicationDBContextModelSnapshot": {
+        "System.Void PortionWise.Migrations.ApplicationDBContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "151": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Database/ApplicationDBContext.cs": {
+      "PortionWise.Database.ApplicationDBContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Ingredient.Entities.IngredientEntity> PortionWise.Database.ApplicationDBContext::get_Ingredients()": {
+          "Lines": {
+            "10": 38
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Recipe.Entities.RecipeEntity> PortionWise.Database.ApplicationDBContext::get_Recipes()": {
+          "Lines": {
+            "11": 98
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Nutrition.Entity.NutritionEntity> PortionWise.Database.ApplicationDBContext::get_NutritionInfo()": {
+          "Lines": {
+            "13": 30
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.ApplicationDBContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)": {
+          "Lines": {
+            "23": 23,
+            "25": 23,
+            "26": 23
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.ApplicationDBContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.ApplicationDBContext::_configReceipt(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 2,
+            "42": 2,
+            "43": 2
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.ApplicationDBContext::_configNutrition(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "46": 2,
+            "47": 2,
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "51": 2,
+            "52": 2,
+            "53": 2,
+            "54": 2
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.ApplicationDBContext::.ctor(Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "17": 23,
+            "18": 23,
+            "19": 23,
+            "20": 23
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Database/DAOs/Recipe/NutritionDAO.cs": {
+      "PortionWise.Database.DAOs.Recipe.NutritionDAO": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Nutrition.Entity.NutritionEntity> PortionWise.Database.DAOs.Recipe.NutritionDAO::get__nutrition()": {
+          "Lines": {
+            "23": 6
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.DAOs.Recipe.NutritionDAO::.ctor(PortionWise.Database.ApplicationDBContext)": {
+          "Lines": {
+            "18": 5,
+            "19": 5,
+            "20": 5,
+            "21": 5
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.NutritionDAO/<DeleteNutritionInfoIfExist>d__6": {
+        "System.Void PortionWise.Database.DAOs.Recipe.NutritionDAO/<DeleteNutritionInfoIfExist>d__6::MoveNext()": {
+          "Lines": {
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 2,
+            "50": 2,
+            "51": 1,
+            "52": 1,
+            "55": 1,
+            "56": 1,
+            "57": 2
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 330,
+              "EndOffset": 332,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 330,
+              "EndOffset": 340,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.NutritionDAO/<GetNutritionByRecipeId>d__4": {
+        "System.Void PortionWise.Database.DAOs.Recipe.NutritionDAO/<GetNutritionByRecipeId>d__4::MoveNext()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 1,
+            "32": 1,
+            "35": 1,
+            "36": 1
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 319,
+              "EndOffset": 321,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 319,
+              "EndOffset": 328,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.NutritionDAO/<InsertNutritionInfo>d__5": {
+        "System.Void PortionWise.Database.DAOs.Recipe.NutritionDAO/<InsertNutritionInfo>d__5::MoveNext()": {
+          "Lines": {
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Database/DAOs/Recipe/RecipeDAO.cs": {
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Recipe.Entities.RecipeEntity> PortionWise.Database.DAOs.Recipe.RecipeDAO::get_Recipes()": {
+          "Lines": {
+            "26": 8
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO::.ctor(PortionWise.Database.ApplicationDBContext)": {
+          "Lines": {
+            "21": 7,
+            "22": 7,
+            "23": 7,
+            "24": 7
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO/<DeleteRecipeForId>d__7": {
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO/<DeleteRecipeForId>d__7::MoveNext()": {
+          "Lines": {
+            "67": 2,
+            "68": 2,
+            "69": 2,
+            "70": 2,
+            "71": 2,
+            "73": 2,
+            "74": 1,
+            "75": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1
+          },
+          "Branches": [
+            {
+              "Line": 73,
+              "Offset": 391,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 391,
+              "EndOffset": 400,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO/<GetAllRecipeSummaries>d__4": {
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO/<GetAllRecipeSummaries>d__4::MoveNext()": {
+          "Lines": {
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO/<GetRecipeById>d__5": {
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO/<GetRecipeById>d__5::MoveNext()": {
+          "Lines": {
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "52": 2,
+            "53": 1,
+            "54": 1,
+            "57": 1,
+            "58": 1
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 443,
+              "EndOffset": 445,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 52,
+              "Offset": 443,
+              "EndOffset": 452,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO/<InsertRecipe>d__6": {
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO/<InsertRecipe>d__6::MoveNext()": {
+          "Lines": {
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Recipe.RecipeDAO/<UpdateRecipe>d__8": {
+        "System.Void PortionWise.Database.DAOs.Recipe.RecipeDAO/<UpdateRecipe>d__8::MoveNext()": {
+          "Lines": {
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Database/DAOs/Recipe/IngredientDAO.cs": {
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<PortionWise.Models.Ingredient.Entities.IngredientEntity> PortionWise.Database.DAOs.Ingredient.IngredientDAO::get__ingredients()": {
+          "Lines": {
+            "26": 12
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO::.ctor(PortionWise.Database.ApplicationDBContext)": {
+          "Lines": {
+            "21": 11,
+            "22": 11,
+            "23": 11,
+            "24": 11
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO/<DeleteIngredient>d__7": {
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO/<DeleteIngredient>d__7::MoveNext()": {
+          "Lines": {
+            "62": 2,
+            "63": 2,
+            "64": 2,
+            "65": 2,
+            "67": 2,
+            "68": 1,
+            "69": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 330,
+              "EndOffset": 332,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 330,
+              "EndOffset": 339,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO/<GetIngredientById>d__5": {
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO/<GetIngredientById>d__5::MoveNext()": {
+          "Lines": {
+            "42": 2,
+            "43": 2,
+            "44": 2,
+            "45": 2,
+            "47": 2,
+            "48": 1,
+            "49": 1,
+            "52": 1,
+            "53": 1
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 319,
+              "EndOffset": 321,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 47,
+              "Offset": 319,
+              "EndOffset": 328,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO/<GetPopularIngredientNames>d__4": {
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO/<GetPopularIngredientNames>d__4::MoveNext()": {
+          "Lines": {
+            "29": 5,
+            "30": 5,
+            "31": 5,
+            "32": 5,
+            "33": 5,
+            "34": 5,
+            "35": 5,
+            "36": 5,
+            "38": 5,
+            "39": 5
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO/<InsertIngredient>d__6": {
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO/<InsertIngredient>d__6::MoveNext()": {
+          "Lines": {
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Database.DAOs.Ingredient.IngredientDAO/<UpdateIngredient>d__8": {
+        "System.Void PortionWise.Database.DAOs.Ingredient.IngredientDAO/<UpdateIngredient>d__8::MoveNext()": {
+          "Lines": {
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Controllers/IngredientController.cs": {
+      "PortionWise.Controllers.IngredientController": {
+        "System.Void PortionWise.Controllers.IngredientController::.ctor(PortionWise.Services.IIngredientService)": {
+          "Lines": {
+            "16": 22,
+            "17": 22,
+            "18": 22,
+            "19": 22
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.IngredientController/<CreateIngredient>d__4": {
+        "System.Void PortionWise.Controllers.IngredientController/<CreateIngredient>d__4::MoveNext()": {
+          "Lines": {
+            "76": 6,
+            "77": 6,
+            "78": 1,
+            "79": 1,
+            "83": 5,
+            "84": 5,
+            "85": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "103": 6
+          },
+          "Branches": [
+            {
+              "Line": 77,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 77,
+              "Offset": 26,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            }
+          ]
+        }
+      },
+      "PortionWise.Controllers.IngredientController/<DeleteIngredient>d__5": {
+        "System.Void PortionWise.Controllers.IngredientController/<DeleteIngredient>d__5::MoveNext()": {
+          "Lines": {
+            "111": 4,
+            "113": 4,
+            "114": 4,
+            "115": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "129": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.IngredientController/<GetIngredientById>d__3": {
+        "System.Void PortionWise.Controllers.IngredientController/<GetIngredientById>d__3::MoveNext()": {
+          "Lines": {
+            "50": 4,
+            "52": 4,
+            "53": 4,
+            "54": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "68": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.IngredientController/<GetPopularIngredientNames>d__2": {
+        "System.Void PortionWise.Controllers.IngredientController/<GetPopularIngredientNames>d__2::MoveNext()": {
+          "Lines": {
+            "28": 3,
+            "30": 3,
+            "31": 3,
+            "32": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "42": 3
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.IngredientController/<UpdateIngredient>d__6": {
+        "System.Void PortionWise.Controllers.IngredientController/<UpdateIngredient>d__6::MoveNext()": {
+          "Lines": {
+            "140": 5,
+            "141": 5,
+            "142": 2,
+            "143": 2,
+            "147": 3,
+            "148": 3,
+            "149": 1,
+            "151": 1,
+            "152": 1,
+            "153": 1,
+            "155": 1,
+            "156": 1,
+            "157": 1,
+            "159": 5
+          },
+          "Branches": [
+            {
+              "Line": 141,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 141,
+              "Offset": 21,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 141,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 141,
+              "Offset": 50,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Controllers/NutritionController.cs": {
+      "PortionWise.Controllers.NutritionController": {
+        "System.Void PortionWise.Controllers.NutritionController::.ctor(PortionWise.Services.INutritionService)": {
+          "Lines": {
+            "15": 4,
+            "16": 4,
+            "17": 4,
+            "18": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.NutritionController/<GetNutrition>d__2": {
+        "System.Void PortionWise.Controllers.NutritionController/<GetNutrition>d__2::MoveNext()": {
+          "Lines": {
+            "26": 4,
+            "28": 4,
+            "29": 4,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "44": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Controllers/RecipeSummaryController.cs": {
+      "PortionWise.Controllers.RecipeSummaryController": {
+        "System.Void PortionWise.Controllers.RecipeSummaryController::.ctor(PortionWise.Services.IRecipeService)": {
+          "Lines": {
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.RecipeSummaryController/<GetAllRecipeSummaries>d__2": {
+        "System.Void PortionWise.Controllers.RecipeSummaryController/<GetAllRecipeSummaries>d__2::MoveNext()": {
+          "Lines": {
+            "23": 2,
+            "25": 2,
+            "26": 2,
+            "27": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "33": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Controllers/RecipeController.cs": {
+      "PortionWise.Controllers.Recipes.RecipeController": {
+        "System.Void PortionWise.Controllers.Recipes.RecipeController::.ctor(PortionWise.Services.IRecipeService)": {
+          "Lines": {
+            "15": 18,
+            "16": 18,
+            "17": 18,
+            "18": 18
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.Recipes.RecipeController/<CreateRecipe>d__3": {
+        "System.Void PortionWise.Controllers.Recipes.RecipeController/<CreateRecipe>d__3::MoveNext()": {
+          "Lines": {
+            "51": 5,
+            "52": 5,
+            "53": 1,
+            "54": 1,
+            "58": 4,
+            "59": 4,
+            "60": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "74": 5
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 52,
+              "Offset": 26,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      },
+      "PortionWise.Controllers.Recipes.RecipeController/<DeleteRecipeForId>d__4": {
+        "System.Void PortionWise.Controllers.Recipes.RecipeController/<DeleteRecipeForId>d__4::MoveNext()": {
+          "Lines": {
+            "82": 4,
+            "84": 4,
+            "85": 4,
+            "86": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "100": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.Recipes.RecipeController/<GetRecipeById>d__2": {
+        "System.Void PortionWise.Controllers.Recipes.RecipeController/<GetRecipeById>d__2::MoveNext()": {
+          "Lines": {
+            "26": 4,
+            "28": 4,
+            "29": 4,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "44": 4
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Controllers.Recipes.RecipeController/<UpdateRecipeForId>d__5": {
+        "System.Void PortionWise.Controllers.Recipes.RecipeController/<UpdateRecipeForId>d__5::MoveNext()": {
+          "Lines": {
+            "111": 5,
+            "112": 5,
+            "113": 2,
+            "114": 2,
+            "118": 3,
+            "119": 3,
+            "120": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "130": 5
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 112,
+              "Offset": 21,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 112,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 112,
+              "Offset": 50,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/ControllerConfig.cs": {
+      "PortionWise.Configs.ControllerConfig": {
+        "System.Void PortionWise.Configs.ControllerConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/DatabaseConfig.cs": {
+      "PortionWise.Configs.DatabaseConfig": {
+        "System.Void PortionWise.Configs.DatabaseConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/DIConfig.cs": {
+      "PortionWise.Configs.DIConfig": {
+        "System.Void PortionWise.Configs.DIConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/HttpClientConfig.cs": {
+      "PortionWise.Configs.HttpClientConfig": {
+        "System.Void PortionWise.Configs.HttpClientConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/MappingConfig.cs": {
+      "PortionWise.Configs.MappingConfig": {
+        "System.Void PortionWise.Configs.MappingConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Configs/SwaggerConfig.cs": {
+      "PortionWise.Configs.SwaggerConfig": {
+        "System.Void PortionWise.Configs.SwaggerConfig::config(Microsoft.AspNetCore.Builder.WebApplicationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/tifff-wang/Code/PortionWise-Backend/PortionWise/Api/NutritionApi.cs": {
+      "PortionWise.Api.NutritionApi": {
+        "System.Void PortionWise.Api.NutritionApi::.ctor(System.Net.Http.IHttpClientFactory)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void PortionWise.Api.NutritionApi::.cctor()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "PortionWise.Api.NutritionApi/<GetNutritionInfo>d__3": {
+        "System.Void PortionWise.Api.NutritionApi/<GetNutritionInfo>d__3::MoveNext()": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 47,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 391,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 391,
+              "EndOffset": 405,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
