@@ -2,13 +2,13 @@
 
 This playground project demonstrates a clean architecture implementation for a C# .NET backend with embedded Sqlite.
 
-The project structure follows the principles of clean architecture, ensuring the separation of concerns and enhancing maintainability and testability. The main components of this architecture are Controllers, Services, Repositories, Data Access Objects (DAOs), API, and different data models such as DTO, BO, Entity, and DL.
-
 ## Recent Updates
 
 To practice the implementation of caching mechanism that enhances performance and reduce dependency on real-time API calls, I have integrated an external API to retrieve nutritional data based on the ingredients of a recipe and store the retrieved nutrition data in a dedicated NutritionEntity within the database.
 
 ## Project Structure
+
+The project structure follows the SOLID principle by implementing a clean architecture, ensuring the separation of concerns and enhancing maintainability and testability. The main components of this architecture are Controllers, Services, Repositories, Data Access Objects (DAOs), API, and different data models such as DTO, BO, Entity, and DL.
 
 The project is organized into several layers, each responsible for a specific part of the application's functionality:
 
@@ -34,6 +34,24 @@ The following image indicates the data flow between layers and components
 
 ![](Public/data_model_naming_convention.png)
 
+## Unit Tests
+
+![](Public/test_coverage.png)
+
+To ensure the reliability and maintainability of the PortionWise-Backend, I used Xunit as the testing framework to perform a thorough testing on each method across the 4 component layers of the application (more than 80% testing coverage), ensuring that both happy and unhappy pathes are validated.
+
+I used Moq and EF in memory database to create mock objects and database bahaviour for the tests. By injecting these mocks into the components, it helped me to ensure that each unit test is focused only on the behavior of the component it targets without relying on the behavior of its external dependencies.
+
+### Layers Tested:
+
+-   **Controllers**: I test the controllers by mocking the services they depend on. Verifying that they handle requests correctly and return the expected results and statuscode.
+
+-   **Services**: The services are tested by mocking the repository they depend on. Ensuring they correctly handle business logic, data mapping and error handling.
+
+-   **Repositories**: Testing the repository layer involves mocking data access objects to ensure that the repositories interact correctly with the database, caching, and external data sources.
+
+-   **DAOs**: I set up a mock dbContext using in memory database, and adding to and clear up mock data from the dbContext for each tests to test the SQL query logic and error handling.
+
 ## Getting Started
 
 ### Prerequisites
@@ -56,20 +74,3 @@ The following image indicates the data flow between layers and components
     ```
 
 4. open `http://localhost:5290/swagger/index.html` in the browser to access swagger.
-
-## Unit Tests
-
-![](Public/test_coverage.png)
-
-To ensure the reliability and maintainability of the PortionWise-Backend, I used Xunit as the testing framework to perform a thorough testing on each method across the 4 component layers of the application (more than 80% testing coverage), ensuring that both happy and unhappy pathes are validated.
-
-I used Moq and SQLite in memory database to create mock objects and database bahaviour for the tests. By injecting these mocks into the components, it helped me to ensure that each unit test is focused only on the behavior of the component it targets without relying on the behavior of its external dependencies.
-
-### Layers Tested:
--   **Controllers**: I test the controllers by mocking the services they depend on. Verifying that they handle requests correctly and return the expected results and statuscode.
-
-- **Services**: The services are tested by mocking the repository they depend on. Ensuring they correctly handle business logic, data mapping and error handling.
-
-- **Repositories**: Testing the repository layer involves mocking data access objects to ensure that the repositories interact correctly with the database, caching, and external data sources.
-
-- **DAOs**: I set up a mock dbContext using in memory database, and adding to and clear up mock data from the dbContext for each tests to test the SQL query logic and error handling.
