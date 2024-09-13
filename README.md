@@ -2,16 +2,14 @@
 
 This playground project demonstrates a clean architecture implementation for a C# .NET backend with embedded Sqlite.
 
+## Recent Updates
+
+To practice the implementation of caching mechanism that enhances performance and reduce dependency on real-time API calls, I have integrated an external API to retrieve nutritional data based on the ingredients of a recipe and store the retrieved nutrition data in a dedicated NutritionEntity within the database.
+
 ## Technologies
 
 ![](https://img.shields.io/badge/C%23-purple) ![](https://img.shields.io/badge/.Net_Core-blue) ![](https://img.shields.io/badge/Entity_Framework-orange)
 ![](https://img.shields.io/badge/SQLite3-grey) ![](https://img.shields.io/badge/Xunit-green) 
-
-
-
-## Recent Updates
-
-To practice the implementation of caching mechanism that enhances performance and reduce dependency on real-time API calls, I have integrated an external API to retrieve nutritional data based on the ingredients of a recipe and store the retrieved nutrition data in a dedicated NutritionEntity within the database.
 
 ## Project Structure
 
